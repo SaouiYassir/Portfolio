@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
-.all {
+.about {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -11,18 +11,18 @@
     margin-left: 10%;
 }
 
-h1 {
+.title1-abt {
     font-size: 50px;
     color: #3B82F6;
     font-family: 'Roboto Mono';
 }
 
-h3 {
+.title3-abt {
     font-size: 35px;
     color: #6c757d;
 }
 
-p {
+.par-abt {
 max-width: 600px;
     font-size: 1.1rem;
     margin-top: 1.5rem;
