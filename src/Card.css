@@ -18,14 +18,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* align-items: stretch; */
     width: 100%;
     height: 100%;
     justify-content: space-around;
 }
 
 .img-card {
-    width: 300px;
+    width: 100%;
+    height: 200px;
+    aspect-ratio: 16 / 9;
+    object-position: center;
     border-radius: 5px;
+    object-fit: cover;
 }
 
 .title-card {
@@ -36,7 +41,7 @@
 .link-card {
     text-decoration: none;
     background-color: #3B82F6;
-    padding: 5px;
+    padding: 8px;
     font-size: 18px;
     color: #ffff;
     border-radius: 5px;
