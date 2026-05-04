@@ -18,7 +18,6 @@
   transform: scale(1.2);
 }
 
-/* Create a fade effect on the edges so icons don't just "pop" in */
 .logos-slider::before,
 .logos-slider::after {
   position: absolute;
@@ -41,7 +40,7 @@
 
 .logos-slide-track {
   display: flex;
-  width: max-content; /* Let the content define the width */
+  width: max-content; 
   animation: scroll 20s linear infinite;
 }
 
@@ -50,7 +49,7 @@
 }
 
 .logo-slide img {
-  height: 120px; /* Force consistent height */
+  height: 120px;
   display: block;
 }
 
@@ -59,7 +58,6 @@
     transform: translateX(0);
   }
   to {
-    /* Move by exactly 50% of the container's width */
     transform: translateX(-50%);
   }
 }
