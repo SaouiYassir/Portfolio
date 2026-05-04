@@ -4,11 +4,13 @@ import './index.css'
 import Header from './Header.jsx'
 import About from './About.jsx'
 import Projects from './Projects.jsx'
+import Langages from './Langages.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Header />
     <About />
     <Projects />
+    <Langages />
   </StrictMode>,
 )

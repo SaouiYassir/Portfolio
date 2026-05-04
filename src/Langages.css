@@ -1,0 +1,65 @@
+
+.logos-slider {
+  overflow: hidden;
+  padding: 30px 0;
+  background: white;
+  white-space: nowrap;
+  position: relative;
+  margin: 20px 20px;
+}
+
+.tech-logo {
+    filter: grayscale(20%);
+    transition: transform 0.3s ease;
+}
+
+.tech-logo:hover {
+  filter: grayscale(0%);
+  transform: scale(1.2);
+}
+
+/* Create a fade effect on the edges so icons don't just "pop" in */
+.logos-slider::before,
+.logos-slider::after {
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.logos-slider::before {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+
+.logos-slider::after {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
+}
+
+.logos-slide-track {
+  display: flex;
+  width: max-content; /* Let the content define the width */
+  animation: scroll 20s linear infinite;
+}
+
+.logo-slide {
+  margin: 0 40px; 
+}
+
+.logo-slide img {
+  height: 120px; /* Force consistent height */
+  display: block;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* Move by exactly 50% of the container's width */
+    transform: translateX(-50%);
+  }
+}
