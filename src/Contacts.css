@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 .from-cont {
     display: flex;
     margin-top: 75px;
     padding: 50px 130px;
+    scroll-margin-top: 100px;
 }
 
 .profile-part {
@@ -16,6 +18,10 @@
 .profile {
     width: 350px;
     border-radius: 50%;    
+    animation: shadowPulse 4s ease-in-out infinite;
+    backface-visibility: hidden;
+    will-change: transform, box-shadow;
+    border-radius: 50%;
 }
 
 .ctc-part {
@@ -32,7 +38,78 @@
     background-color: #3B82F6;
     padding: 15px;
     border-radius: 5px;
-    font-family: 'Roboto Mono';
+    font-family: "Merriweather Sans";
     width: 200px;
     text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ctc-links:hover {
+    background-color: #2563eb; 
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.msg {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    justify-content: center;
+    gap: 40px;              
+    margin-top: 80px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.msg h1 {
+    font-size: 58px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 0;
+    letter-spacing: -1px;
+    font-family: 'Roboto Mono';
+}
+
+.msg a {
+    display: inline-block;
+    padding: 12px 32px;
+    background-color: #3b82f6;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.msg a:hover {
+    background-color: #2563eb; 
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.par-msg {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 20px;
+}
+
+@keyframes shadowPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+    }
+    70% {
+        transform: scale(1.2);
+        box-shadow: 0 0 0 20px rgba(37, 99, 235, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+    }
 }
