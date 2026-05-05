@@ -1,4 +1,4 @@
-import './Formulaire.css'
+import './Contacts.css'
 import profile from './assets/profile.jpg'
 import cv from './assets/Mon_CV.pdf';
 
@@ -9,7 +9,7 @@ import $ from 'jquery';
 
 
 
-function Formulaire() {
+function Contacts() {
     const imgRef = useRef(null);
 
     useEffect(() => {
@@ -40,7 +40,7 @@ function Formulaire() {
 
 
     return (
-        <div className='from-cont'>
+        <div className='from-cont' id='Contacts'>
             <div className='profile-part'>
                 <img ref={imgRef} src={profile} alt="" srcset="" className='profile' />
             </div>
@@ -54,4 +54,4 @@ function Formulaire() {
     );
 }
 
-export default Formulaire;
+export default Contacts;

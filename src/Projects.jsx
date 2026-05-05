@@ -5,7 +5,7 @@ import pic2 from './assets/prj2.png'
 
 function Projects() {
     return (
-        <section className="prj-section">
+        <section className="prj-section" id="Projects">
             <h1 className="tile-prj">See my works</h1>
             <div className="cards">
                 <Card 

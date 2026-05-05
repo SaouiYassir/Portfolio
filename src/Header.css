@@ -36,7 +36,17 @@ header {
   height: 100%;
   display: flex;
   align-items: center;
+}
+
+.header-links {
+  text-decoration: none;
   color: #4B5563;
+  transition: ease-in-out 0.3s;
+}
+
+.header-links:hover {
+  color: #3B82F6;
+  cursor: pointer;
 }
 
 ul {

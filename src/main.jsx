@@ -6,7 +6,7 @@ import Header from './Header.jsx'
 import About from './About.jsx'
 import Projects from './Projects.jsx'
 import Langages from './Langages.jsx'
-import Formulaire from './Formulaire.jsx'
+import Contacts from './Contacts.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -14,6 +14,6 @@ createRoot(document.getElementById('root')).render(
     <About />
     <Projects />
     <Langages />
-    <Formulaire />
+    <Contacts />
   </StrictMode>,
 )

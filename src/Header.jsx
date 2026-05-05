@@ -6,7 +6,7 @@ function Header() {
   const navRef = useRef(null);
 
   useEffect(() => {
-    const listItems = $(navRef.current).find('li');
+    const listItems = $(navRef.current).find('a');
 
     listItems.hover(
       function() {
@@ -31,9 +31,9 @@ function Header() {
       <div className='right-part'>YASSIR SAOUI</div>
       <div className='list-elements'>
         <ul ref={navRef}>
-          <li>Home</li>
-          <li>Projects</li>
-          <li>Contact</li>
+          <li><a className='header-links' href="#">Home</a></li>
+          <li><a className='header-links' href="#Projects">Projects</a></li>
+          <li><a className='header-links' href="#Contacts">Contact</a></li>
         </ul>
       </div>
       <div className='left-part'>
