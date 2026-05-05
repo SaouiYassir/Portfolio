@@ -63,12 +63,11 @@ ul {
   align-items: center;
 }
 
-.left-part a {
+.left-part i {
   background-color: #3B82F6;
-  padding: 3px 8px;
+  color: #FFFFFF;
+  padding: 8px;
   border-radius: 8px;
   border: none;
   cursor: pointer;
-  text-decoration: none;
-  color: #FFFFFF;
 }

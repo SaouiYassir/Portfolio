@@ -9,14 +9,14 @@ function Header() {
     const listItems = $(navRef.current).find('a');
 
     listItems.hover(
-      function() {
+      function () {
         $(this).css({
           'color': '#007bff',
           'transition': '0.3s',
           'cursor': 'pointer'
         });
       },
-      function() {
+      function () {
         $(this).css('color', 'black');
       }
     );
@@ -25,6 +25,8 @@ function Header() {
       listItems.off();
     };
   }, []);
+
+  
 
   return (
     <header>
@@ -37,7 +39,7 @@ function Header() {
         </ul>
       </div>
       <div className='left-part'>
-        <a href="mailto:yassirsaoui06@gmail.com">Hire me</a>
+        <i class="bi bi-moon-fill"></i>
       </div>
     </header>
   );

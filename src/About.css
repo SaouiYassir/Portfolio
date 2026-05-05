@@ -1,15 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 .about {
-    width: 50%;
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 70px);
-    padding: 0 120px;
+    min-height: calc(100vh - 70px);
+    padding: 60px 120px;
     gap: 15px;
     justify-content: center;
-    margin-left: 13%;
-    transform: scale(1.15);
+    max-width: 900px;
+    margin: 0 auto 0 13%;
 }
 
 .title1-abt {
@@ -24,10 +23,65 @@
 }
 
 .par-abt {
-max-width: 600px;
+    max-width: 600px;
     font-size: 1.1rem;
     margin-top: 1.5rem;
     line-height: 1.7;
     color: #444;
 }
 
+/* Large screens */
+@media (max-width: 1200px) {
+    .about {
+        margin-left: 6%;
+        padding: 60px 80px;
+    }
+}
+
+/* Tablets landscape */
+@media (max-width: 1024px) {
+    .about {
+        margin-left: 0;
+        padding: 60px 60px;
+        max-width: 100%;
+    }
+    .title1-abt { font-size: 42px; }
+    .title3-abt { font-size: 28px; }
+}
+
+/* Tablets portrait */
+@media (max-width: 768px) {
+    .about {
+        padding: 50px 36px;
+        min-height: calc(100vh - 60px);
+        gap: 12px;
+    }
+    .title1-abt { font-size: 34px; }
+    .title3-abt { font-size: 22px; }
+    .par-abt {
+        font-size: 1rem;
+        max-width: 100%;
+        margin-top: 1rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .about {
+        padding: 40px 24px;
+        gap: 10px;
+    }
+    .title1-abt { font-size: 28px; }
+    .title3-abt { font-size: 18px; }
+    .par-abt {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+    .about { padding: 32px 18px; }
+    .title1-abt { font-size: 24px; }
+    .title3-abt { font-size: 16px; }
+}

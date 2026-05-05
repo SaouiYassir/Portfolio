@@ -4,7 +4,7 @@
   background: white;
   white-space: nowrap;
   position: relative;
-  margin: 20px 20px;
+  margin: 20px;
 }
 
 .tech-logo {
@@ -56,10 +56,76 @@
 }
 
 @keyframes scroll {
-  from {
-    transform: translateX(0);
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Tablets landscape */
+@media (max-width: 1024px) {
+  .logos-slider {
+    margin: 16px;
+    padding: 24px 0;
   }
-  to {
-    transform: translateX(-50%);
+  .logos-slider::before,
+  .logos-slider::after {
+    width: 70px;     /* narrower fade so logos aren't hidden too early */
   }
+  .logo-slide {
+    margin: 0 30px;
+    width: 120px;
+  }
+  .logo-slide img { height: 90px; }
+}
+
+/* Tablets portrait */
+@media (max-width: 768px) {
+  .logos-slider {
+    margin: 12px;
+    padding: 20px 0;
+  }
+  .logos-slider::before,
+  .logos-slider::after {
+    width: 50px;
+  }
+  .logo-slide {
+    margin: 0 24px;
+    width: 100px;
+  }
+  .logo-slide img { height: 70px; }
+  .logos-slide-track {
+    animation-duration: 22s; /* slightly faster — fewer logos visible */
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .logos-slider {
+    margin: 8px;
+    padding: 16px 0;
+  }
+  .logos-slider::before,
+  .logos-slider::after {
+    width: 32px;
+  }
+  .logo-slide {
+    margin: 0 18px;
+    width: 75px;
+  }
+  .logo-slide img { height: 52px; }
+  .logos-slide-track {
+    animation-duration: 18s;
+  }
+}
+
+/* Very small */
+@media (max-width: 360px) {
+  .logos-slider::before,
+  .logos-slider::after {
+    width: 24px;
+  }
+  .logo-slide {
+    margin: 0 14px;
+    width: 60px;
+  }
+  .logo-slide img { height: 42px; }
 }

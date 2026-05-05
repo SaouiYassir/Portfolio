@@ -9,7 +9,8 @@
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
     border-radius: 16px;
     width: 320px;
-    height: 400px;
+    height: auto;          /* was 400px — let content breathe */
+    min-height: 380px;
     padding: 20px;
     align-items: center;
 }
@@ -18,15 +19,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* align-items: stretch; */
     width: 100%;
     height: 100%;
     justify-content: space-around;
+    gap: 12px;
 }
 
 .img-card {
     width: 100%;
-    height: 200px;
+    height: 180px;
     aspect-ratio: 16 / 9;
     object-position: center;
     border-radius: 5px;
@@ -36,21 +37,74 @@
 .title-card {
     color: #3B82F6;
     font-size: 25px;
+    text-align: center;
+}
+
+.desc-card {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.5;
 }
 
 .link-card {
     text-decoration: none;
     background-color: #3B82F6;
-    padding: 8px;
+    padding: 8px 20px;
     font-size: 18px;
-    color: #ffff;
+    color: #fff;
     border-radius: 5px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
 }
 
 .link-card:hover {
-    background-color: #2563eb; 
-    transform: translateY(-5px); 
+    background-color: #2563eb;
+    transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Tablets landscape — slightly narrower cards */
+@media (max-width: 1024px) {
+    .card-comp {
+        width: 280px;
+        min-height: 360px;
+    }
+    .img-card { height: 160px; }
+    .title-card { font-size: 22px; }
+    .link-card { font-size: 16px; }
+}
+
+/* Tablets portrait — cards go full width */
+@media (max-width: 768px) {
+    .card-comp {
+        width: 100%;
+        max-width: 480px;
+        min-height: unset;
+    }
+    .img-card { height: 200px; }
+    .title-card { font-size: 22px; }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .card-comp {
+        padding: 16px;
+        gap: 14px;
+        border-radius: 12px;
+    }
+    .img-card { height: 170px; }
+    .title-card { font-size: 20px; }
+    .link-card {
+        font-size: 15px;
+        padding: 7px 16px;
+    }
+}
+
+/* Very small */
+@media (max-width: 360px) {
+    .img-card { height: 150px; }
+    .title-card { font-size: 18px; }
+    .link-card { font-size: 14px; }
 }
