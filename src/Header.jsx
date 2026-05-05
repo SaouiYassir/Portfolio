@@ -1,45 +1,30 @@
-import { useEffect, useRef } from 'react';
+import { useState } from 'react';
 import './Header.css';
-import $ from 'jquery';
 
 function Header() {
-  const navRef = useRef(null);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  useEffect(() => {
-    const listItems = $(navRef.current).find('a');
-
-    listItems.hover(
-      function () {
-        $(this).css({
-          'color': '#007bff',
-          'transition': '0.3s',
-          'cursor': 'pointer'
-        });
-      },
-      function () {
-        $(this).css('color', 'black');
-      }
-    );
-
-    return () => {
-      listItems.off();
-    };
-  }, []);
-
-  
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+    // This toggles the class on the body so the whole app changes
+    document.body.classList.toggle('dark-mode');
+  };
 
   return (
-    <header>
+    <header className={isDarkMode ? 'dark-mode-header' : ''}>
       <div className='right-part'>YASSIR SAOUI</div>
+      
       <div className='list-elements'>
-        <ul ref={navRef}>
+        {/* No longer need the navRef or jQuery here */}
+        <ul>
           <li><a className='header-links' href="#">Home</a></li>
           <li><a className='header-links' href="#Projects">Projects</a></li>
           <li><a className='header-links' href="#Contacts">Contact</a></li>
         </ul>
       </div>
-      <div className='left-part'>
-        <i class="bi bi-moon-fill"></i>
+
+      <div className='left-part' onClick={toggleTheme} style={{ cursor: 'pointer' }}>
+        <i className={isDarkMode ? "bi bi-sun-fill" : "bi bi-moon-fill"}></i>
       </div>
     </header>
   );
