@@ -8,7 +8,8 @@
     padding: 0 120px;
     gap: 15px;
     justify-content: center;
-    margin-left: 10%;
+    margin-left: 13%;
+    transform: scale(1.15);
 }
 
 .title1-abt {
