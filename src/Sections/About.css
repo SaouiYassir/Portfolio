@@ -11,25 +11,6 @@
     margin: 0 auto 0 13%;
 }
 
-.title1-abt {
-    font-size: 50px;
-    color: #3B82F6;
-    font-family: 'Roboto Mono';
-}
-
-.title3-abt {
-    font-size: 35px;
-    color: #6c757d;
-}
-
-.par-abt {
-    max-width: 600px;
-    font-size: 1.1rem;
-    margin-top: 1.5rem;
-    line-height: 1.7;
-    color: var(--text-color);
-}
-
 /* Large screens */
 @media (max-width: 1200px) {
     .about {
@@ -45,8 +26,6 @@
         padding: 60px 60px;
         max-width: 100%;
     }
-    .title1-abt { font-size: 42px; }
-    .title3-abt { font-size: 28px; }
 }
 
 /* Tablets portrait */
@@ -56,8 +35,6 @@
         min-height: calc(100vh - 60px);
         gap: 12px;
     }
-    .title1-abt { font-size: 34px; }
-    .title3-abt { font-size: 22px; }
     .par-abt {
         font-size: 1rem;
         max-width: 100%;
@@ -71,8 +48,6 @@
         padding: 40px 24px;
         gap: 10px;
     }
-    .title1-abt { font-size: 28px; }
-    .title3-abt { font-size: 18px; }
     .par-abt {
         font-size: 0.95rem;
         line-height: 1.6;
@@ -82,6 +57,5 @@
 /* Very small screens */
 @media (max-width: 360px) {
     .about { padding: 32px 18px; }
-    .title1-abt { font-size: 24px; }
-    .title3-abt { font-size: 16px; }
+
 }

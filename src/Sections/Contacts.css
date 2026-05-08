@@ -8,51 +8,6 @@
     scroll-margin-top: 100px;
 }
 
-.profile-part {
-    width: 50%;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-
-.profile {
-    width: 350px;
-    border-radius: 50%;
-    animation: shadowPulse 4s ease-in-out infinite;
-    backface-visibility: hidden;
-    will-change: transform, box-shadow;
-}
-
-.ctc-part {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    gap: 20px;
-}
-
-.ctc-links {
-    text-decoration: none;
-    color: #fff;
-    background-color: #3B82F6;
-    padding: 15px;
-    border-radius: 5px;
-    font-family: "Merriweather Sans";
-    width: 200px;
-    text-align: center;
-    display: flex;
-    justify-content: space-evenly;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.ctc-links:hover {
-    background-color: #2563eb;
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
 .msg {
     display: flex;
     flex-direction: column;
@@ -104,8 +59,6 @@
     .from-cont {
         padding: 50px 60px;
     }
-    .profile { width: 280px; }
-    .ctc-links { width: 180px; }
     .msg h1 { font-size: 48px; }
 }
 
@@ -118,71 +71,19 @@
         gap: 40px;
         margin-top: 40px;
     }
-    .profile-part,
-    .ctc-part {
-        width: 100%;
-    }
-    .profile { width: 260px; }
-    .ctc-part {
-        flex-direction: row;   /* buttons in a row when stacked */
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 16px;
-    }
-    .ctc-links { width: 180px; }
-    .msg h1 { font-size: 42px; }
-    .par-msg { font-size: 18px; }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
     .from-cont { padding: 32px 24px; }
-    .profile { width: 220px; }
-    .ctc-links {
-        width: 160px;
-        padding: 12px;
-        font-size: 14px;
-    }
-    .msg {
-        margin-top: 50px;
-        gap: 28px;
-    }
-    .msg h1 { font-size: 34px; letter-spacing: -0.5px; }
-    .par-msg { font-size: 16px; gap: 12px; }
 }
 
 /* Small mobile — buttons go full column again */
 @media (max-width: 480px) {
     .from-cont { padding: 24px 16px; margin-top: 20px; }
-    .profile { width: 180px; }
-    .ctc-part {
-        flex-direction: column;
-        align-items: center;
-    }
-    .ctc-links { width: 200px; }
-    .msg h1 { font-size: 26px; }
-    .msg a { padding: 10px 24px; font-size: 15px; }
-    .par-msg { font-size: 15px; }
 }
 
 /* Very small */
 @media (max-width: 360px) {
-    .profile { width: 150px; }
-    .msg h1 { font-size: 22px; }
-    .ctc-links { width: 180px; font-size: 13px; }
-}
 
-@keyframes shadowPulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
-    }
-    70% {
-        transform: scale(1.2);
-        box-shadow: 0 0 0 20px rgba(37, 99, 235, 0);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
-    }
 }

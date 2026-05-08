@@ -7,11 +7,13 @@ import About from './Sections/About.jsx'
 import Projects from './Sections/Projects.jsx'
 import Langages from './Components/Languages/Langages.jsx'
 import Contacts from './Sections/Contacts.jsx'
+import Hero from './Sections/Hero.jsx';
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Header />
+    <Hero />
     <About />
     <Projects />
     <Langages />
