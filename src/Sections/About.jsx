@@ -3,7 +3,7 @@ import cv from '../assets/Mon_CV.pdf';
 
 const skills = {
   frontend: ['React', 'JavaScript', 'HTML & CSS', 'Node.js'],
-  other: ['C++', 'SFML', 'MySQL', 'Git'],
+  other: ['C++', 'SFML', 'MySQL', 'Git', 'Python'],
   learning: ['TypeScript', 'PHP'],
 };
 

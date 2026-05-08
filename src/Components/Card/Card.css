@@ -8,11 +8,18 @@
     border: 1px solid rgba(59, 130, 246, 0.2);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
     border-radius: 16px;
-    width: 320px;
-    height: auto;          /* was 400px — let content breathe */
+    width: 340px;
+    height: auto;        
     min-height: 380px;
     padding: 20px;
     align-items: center;
+    transition: all 0.4s ease-in-out;
+}
+
+.card-comp:hover {
+  transform: translateY(-4px);
+  border-color: #3B82F6;
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
 }
 
 .card-info {
