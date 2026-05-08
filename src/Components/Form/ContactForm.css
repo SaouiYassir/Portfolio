@@ -64,3 +64,19 @@ textarea {
     text-align: center;
     font-size: 14px;
 }
+
+
+.input-group input,
+.input-group textarea {
+  background: var(--input-color);
+  border: 1px solid var(--border-textarea-color);
+  color: #F1F5F9;
+  border-radius: 8px;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #3B82F6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+} 

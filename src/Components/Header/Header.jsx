@@ -31,24 +31,29 @@ function Header() {
   const toggleTheme = () => setIsDarkMode(prev => !prev);
   const toggleMenu = () => setMenuOpen(prev => !prev);
 
+  const handleRefresh = () => {
+    window.location.reload();
+  };
+
   return (
     <>
       <header className={isDarkMode ? 'dark-mode-header' : ''}>
         
-        <div className='right-part'>YASSIR SAOUI</div>
+        <div className='right-part' onClick={handleRefresh}>YASSIR SAOUI</div>
 
         
         <div className='list-elements'>
           <ul>
             <li><a className='header-links' href="#">Home</a></li>
+            <li><a className='header-links' href="#About">About Me</a></li>
             <li><a className='header-links' href="#Projects">Projects</a></li>
             <li><a className='header-links' href="#Contacts">Contact</a></li>
           </ul>
         </div>
 
         
-        <div className='left-part' onClick={toggleTheme} style={{ cursor: 'pointer' }}>
-          <i className={isDarkMode ? "bi bi-sun-fill" : "bi bi-moon-fill"}></i>
+        <div className='left-part'>
+          <i onClick={toggleTheme} style={{ cursor: 'pointer' }} className={isDarkMode ? "bi bi-sun-fill" : "bi bi-moon-fill"}></i>
         </div>
 
         

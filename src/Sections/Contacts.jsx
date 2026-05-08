@@ -6,7 +6,7 @@ import ContactForm from '../Components/Form/ContactForm.jsx';
 function Contacts() {
     return (
         <>
-            <div className='msg'>
+            <div className='msg' id='Contacts'>
                 <h1>Let’s build something great ...</h1>
                 <div className='par-msg'>
                     <p>Always looking for new projects and interesting people.</p>

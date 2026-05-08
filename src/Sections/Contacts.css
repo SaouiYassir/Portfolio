@@ -1,13 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-.from-cont {
-    display: flex;
-    margin-top: 75px;
-    padding: 50px 130px;
-    scroll-margin-top: 100px;
-}
-
 .msg {
     display: flex;
     flex-direction: column;
@@ -18,6 +11,7 @@
     padding: 20px;
     text-align: center;
     margin-bottom: 50px;
+    scroll-margin-top: 70px;
 }
 
 .msg h1 {
@@ -52,38 +46,4 @@
     flex-direction: column;
     gap: 15px;
     font-size: 20px;
-}
-
-/* Tablets landscape */
-@media (max-width: 1200px) {
-    .from-cont {
-        padding: 50px 60px;
-    }
-    .msg h1 { font-size: 48px; }
-}
-
-/* Tablets portrait — stack photo above buttons */
-@media (max-width: 1024px) {
-    .from-cont {
-        flex-direction: column;
-        align-items: center;
-        padding: 40px 40px;
-        gap: 40px;
-        margin-top: 40px;
-    }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .from-cont { padding: 32px 24px; }
-}
-
-/* Small mobile — buttons go full column again */
-@media (max-width: 480px) {
-    .from-cont { padding: 24px 16px; margin-top: 20px; }
-}
-
-/* Very small */
-@media (max-width: 360px) {
-
 }
