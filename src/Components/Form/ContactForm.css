@@ -6,7 +6,6 @@
 }
 
 .form {
-    /* background: var(--header-color); */
     background: var(--card-color);
     transform: scale(1.15);
     padding: 30px;

@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    /* background: rgba(255, 255, 255, 0.4); */
     background: var(--card-color);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -48,10 +47,16 @@
     line-height: 1.5;
 }
 
+.card-links {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
 .link-card {
     text-decoration: none;
     background-color: #3B82F6;
-    padding: 8px 20px;
+    padding: 8px 13px;
     font-size: 18px;
     color: #fff;
     border-radius: 5px;
