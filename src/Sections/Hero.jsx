@@ -11,7 +11,7 @@ function Hero() {
             <div className='hero-first-part'>
                 <div className='hero-intro'>
                     <h1 className='title1-hero'>Hi, I'm Yassir</h1>
-                    <h3 className='title3-hero'>Computer Science Student</h3>
+                    <h3 className='title3-hero'>Frontend Developer & CS Student</h3>
                     <p className='par-hero'>Computer science student with a strong interest in software development, game programming, and modern web technologies. Currently building projects with C++, SFML, HTML, CSS, and JavaScript while continuously improving my skills.</p>            
                 </div>
                 <div className='profile-part'>
