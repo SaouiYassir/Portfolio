@@ -1,7 +1,7 @@
-import Card from "./Card";
+import Card from "../Components/Card/Card.jsx";
 import './Projects.css'
-import pic1 from './assets/prj1.png'
-import pic2 from './assets/prj2.png'
+import pic1 from '../assets/prj1.png'
+import pic2 from '../assets/prj2.png'
 
 function Projects() {
     return (

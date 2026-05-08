@@ -1,6 +1,7 @@
 import './Contacts.css'
-import profile from './assets/profile.jpg'
-import cv from './assets/Mon_CV.pdf';
+import ContactForm from '../Components/Form/ContactForm.jsx';
+import profile from '../assets/profile.jpg'
+import cv from '../assets/Mon_CV.pdf';
 
 
 
@@ -33,6 +34,7 @@ function Contacts() {
                 </div>
                 <a href="#ContactForm">SAY HELLOOO !!!</a>
             </div>
+            <ContactForm />
         </>
     );
 }
