@@ -11,6 +11,7 @@ html {
   --card-color: #ffffff;
   --input-color: white;
   --border-textarea-color: rgb(193, 193, 193);
+  --footer-color: #ffffff;
 }
 
 /* 2. Define your colors for Dark Mode */
@@ -22,6 +23,7 @@ body.dark-mode {
   --card-color: #111827;
   --input-color: #1E293B;
   --border-textarea-color: #334155;
+  --footer-color: #1F2937;
 }
 
 /* 3. Apply the variables to the body */

@@ -8,7 +8,7 @@ import Projects from './Sections/Projects.jsx'
 import Langages from './Components/Languages/Langages.jsx'
 import Contacts from './Sections/Contacts.jsx'
 import Hero from './Sections/Hero.jsx';
-
+import Footer from './Components/Footer/Footer.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -18,5 +18,6 @@ createRoot(document.getElementById('root')).render(
     <Projects />
     <Langages />
     <Contacts />
+    <Footer />
   </StrictMode>,
 )

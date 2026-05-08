@@ -79,6 +79,7 @@ function Header() {
       <nav className={`mobile-menu ${menuOpen ? 'mobile-menu--open' : ''}`}>
         <ul>
           <li><a className='header-links' href="#" onClick={() => setMenuOpen(false)}>Home</a></li>
+          <li><a className='header-links' href="#About" onClick={() => setMenuOpen(false)}>About Me</a></li>
           <li><a className='header-links' href="#Projects" onClick={() => setMenuOpen(false)}>Projects</a></li>
           <li><a className='header-links' href="#Contacts" onClick={() => setMenuOpen(false)}>Contact</a></li>
         </ul>
