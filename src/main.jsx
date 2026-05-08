@@ -7,6 +7,7 @@ import About from './About.jsx'
 import Projects from './Projects.jsx'
 import Langages from './Langages.jsx'
 import Contacts from './Contacts.jsx'
+import ContactForm from './ContactForm.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -15,5 +16,6 @@ createRoot(document.getElementById('root')).render(
     <Projects />
     <Langages />
     <Contacts />
+    <ContactForm />
   </StrictMode>,
 )

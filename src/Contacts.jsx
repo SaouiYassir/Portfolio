@@ -31,7 +31,7 @@ function Contacts() {
                     <p>Always looking for new projects and interesting people.</p>
                     <p>Drop a line and let’s see what we can create together.</p>
                 </div>
-                <a href="mailto:yassirsaoui06@gmail.com">SAY HELLOOO !!!</a>
+                <a href="#ContactForm">SAY HELLOOO !!!</a>
             </div>
         </>
     );

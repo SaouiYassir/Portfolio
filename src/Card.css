@@ -43,7 +43,7 @@
 .desc-card {
     text-align: center;
     font-size: 0.95rem;
-    color: #444;
+    color: var(--text-color);
     line-height: 1.5;
 }
 
