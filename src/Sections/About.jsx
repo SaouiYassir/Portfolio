@@ -18,12 +18,12 @@ const openTo = ['Internships', 'Freelance', 'Remote'];
 export default function About() {
   return (
     <section className="about-section" id="About">
-      <p className="about-label">Get to know me</p>
-      <h2 className="about-title">About me</h2>
+      <p className="about-label" data-aos="fade-up" data-aos-anchor-placement="center-bottom">Get to know me</p>
+      <h2 className="about-title" data-aos="fade-up" data-aos-anchor-placement="center-bottom">About me</h2>
 
-      <div className="stat-row">
+      <div className="stat-row" >
         {stats.map(({ num, label }) => (
-          <div className="stat-card" key={label}>
+          <div className="stat-card" key={label} data-aos="fade-up" data-aos-anchor-placement="center-bottom">
             <span className="stat-num">{num}</span>
             <span className="stat-lbl">{label}</span>
           </div>
@@ -32,7 +32,7 @@ export default function About() {
 
       <div className="about-grid">
 
-        <div className="about-card about-card--wide">
+        <div className="about-card about-card--wide" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
           <span className="card-icon"><i className="bi bi-person-fill"></i></span>
           <p className="card-label">Who I am</p>
           <p className="card-body">
@@ -43,7 +43,7 @@ export default function About() {
           </p>
         </div>
 
-        <div className="about-card">
+        <div className="about-card" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
           <span className="card-icon"><i className="bi bi-code-slash"></i></span>
           <p className="card-label">Frontend</p>
           <div className="pill-group">
@@ -53,7 +53,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="about-card">
+        <div className="about-card" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
           <span className="card-icon"><i className="bi bi-cpu"></i></span>
           <p className="card-label">Other skills</p>
           <div className="pill-group">
@@ -63,7 +63,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="about-card">
+        <div className="about-card" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
           <span className="card-icon"><i className="bi bi-bullseye"></i></span>
           <p className="card-label">Currently learning</p>
           <div className="pill-group">
@@ -73,7 +73,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="about-card">
+        <div className="about-card" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
           <span className="card-icon"><i className="bi bi-briefcase-fill"></i></span>
           <p className="card-label">Open to</p>
           <div className="pill-group">
@@ -85,7 +85,7 @@ export default function About() {
 
       </div>
 
-      <div className="about-cta">
+      <div className="about-cta" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
         <span className="available-badge">
           <span className="available-dot"></span>
           Available for work

@@ -2,7 +2,7 @@ import './Card.css'
 
 function Card({title, srcImg, desc, techs = [], link_github, link_demo}) {
     return (
-        <div className='card-comp'>
+        <div className='card-comp' data-aos="zoom-in-up" data-aos-duration="800">
             <img src={srcImg} alt={title} className='img-card' />
             <div className='card-info'>
                 <h2 className='title-card'>{title}</h2>

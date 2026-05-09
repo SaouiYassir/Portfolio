@@ -2,11 +2,15 @@ import Card from "../Components/Card/Card.jsx";
 import './Projects.css'
 import pic1 from '../assets/prj1.png'
 import pic2 from '../assets/prj2.png'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+AOS.init();
 
 function Projects() {
     return (
         <section className="prj-section" id="Projects">
-            <h1 className="tile-prj">Featured Projects</h1>
+            <h1 className="tile-prj" data-aos="fade-up" data-aos-anchor-placement="center-bottom">Featured Projects</h1>
             <div className="cards">
                 <Card 
                     title= "LuxAuto Parts & Services"

@@ -32,7 +32,7 @@ const Langages = () => {
     const scrollingSkills = [...skills, ...skills];
 
     return (
-        <div className="logos-slider">
+        <div className="logos-slider" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
             <div className="logos-slide-track">
                 {scrollingSkills.map((skill, index) => (
                     <div className="logo-slide" key={index}>

@@ -27,7 +27,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div id='ContactForm'>
+    <div id='ContactForm' data-aos="fade-up" data-aos-anchor-placement="center-bottom">
       <form className='form' ref={form} onSubmit={sendEmail}>
         <h2>Contact Me</h2>
         

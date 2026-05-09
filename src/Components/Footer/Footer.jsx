@@ -2,7 +2,7 @@ import './Footer.css'
 
 function Footer() {
     return (
-        <div className='footer-container'>
+        <div className='footer-container' data-aos="fade-up" data-aos-anchor-placement="center-bottom">
             <div className='footer-links'>
                 <a href="https://www.linkedin.com/in/yassir-saoui/" target='_blank'><i className="bi bi-linkedin"></i></a>
                 <a href="https://github.com/SaouiYassir/" target='_blank'><i className="bi bi-github"></i></a>
