@@ -2,6 +2,7 @@ import './Hero.css'
 import profile from '../assets/profile.jpg'
 import cv from '../assets/Mon_CV.pdf';
 import React, { useRef } from 'react';
+import Typewriter from 'typewriter-effect';
 
 function Hero() {
     const imgRef = useRef(null);
@@ -11,7 +12,18 @@ function Hero() {
             <div className='hero-first-part' data-aos="fade-right" data-aos-duration="500">
                 <div className='hero-intro'>
                     <h1 className='title1-hero'>Hi, I'm Yassir</h1>
-                    <h3 className='title3-hero'>Frontend Developer & CS Student</h3>
+                    <h3 className='title3-hero'>
+                        <Typewriter
+                        options={{
+                            strings: 'Frontend Developer & CS Student ',
+                            autoStart: true,
+                            loop: true,
+                            deleteSpeed: 50,
+                            delay: 50,
+                            cursor: '|',
+                        }}
+                        />
+                    </h3>
                     <p className='par-hero'>Computer science student with a strong interest in software development, game programming, and modern web technologies. Currently building projects with C++, SFML, HTML, CSS, and JavaScript while continuously improving my skills.</p>            
                 </div>
                 <div className='profile-part' data-aos="fade-left" data-aos-duration="1000">
