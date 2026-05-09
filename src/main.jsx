@@ -21,3 +21,6 @@ createRoot(document.getElementById('root')).render(
     <Footer />
   </StrictMode>,
 )
+
+
+window.addEventListener('load', () => { const loader = document.getElementById('loader'); if (loader) { setTimeout(() => loader.classList.add('hidden'), 1500); } });
