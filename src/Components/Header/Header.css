@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
 * {
   margin: 0;
@@ -29,6 +30,7 @@ header {
   align-items: center;
   margin-left: 40px;
   font-family: 'Roboto Mono';
+  font-weight: 600;
   font-size: 18px;
   color: var(--primary-color);
   cursor: pointer;
@@ -59,6 +61,7 @@ ul {
   list-style-type: none;
   width: 100%;
   font-size: 18px;
+  font-family: "Space Grotesk";
 }
 
 .left-part {
@@ -176,7 +179,7 @@ ul {
   display: block;
   padding: 14px 32px;
   font-size: 16px;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Space Grotesk";
   transition: background 0.2s ease, color 0.2s ease;
 }
 

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 .about-section {
   max-width: 900px;
@@ -62,7 +63,6 @@
   grid-template-columns: 1fr 1fr;
   gap: 14px;
   margin-bottom: 16px;
-  align-items: stretch;
 }
 
 .about-card {
@@ -71,7 +71,6 @@
   border-radius: 12px;
   padding: 1.25rem;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
-  height: 100%;
 }
 
 .about-card:hover {
@@ -103,6 +102,7 @@
   color: var(--text-color);
   line-height: 1.7;
   margin: 0;
+  font-family: "Inter";
 }
 
 .pill-group {
@@ -177,7 +177,7 @@
   font-weight: 500;
   text-decoration: none;
   transition: background 0.2s ease, transform 0.15s ease;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto Mono';
 }
 
 .btn-primary:hover {
@@ -198,7 +198,7 @@
   font-weight: 500;
   text-decoration: none;
   transition: border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto Mono';
 }
 
 .btn-outline:hover {

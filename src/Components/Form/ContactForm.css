@@ -19,6 +19,7 @@
 .form h2 {
     color: var(--primary-color);
     margin-bottom: 20px;
+    font-family: 'Roboto Mono';
 }
 
 .input-group {
@@ -50,6 +51,17 @@ textarea {
     color: white;
     border: none;
     cursor: pointer;
+    font-family: 'Roboto Mono';
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.send-butt:hover {
+    background-color: #2563eb;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .form p {
@@ -65,6 +77,12 @@ textarea {
   border: 1px solid var(--input-border);
   color: var(--text-color);
   border-radius: 8px;
+  font-family: "Inter";
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    font-family: "Inter";
 }
 
 .input-group input:focus,
