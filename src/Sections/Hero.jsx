@@ -31,10 +31,18 @@ function Hero() {
                 </div>            
             </div>
             <div className='ctc-part'>
-                <a data-aos="fade-down" data-aos-duration="500" className='ctc-links' href="https://www.linkedin.com/in/yassir-saoui/" target='_blank'><i className="bi bi-linkedin"></i><p>Visit my LinkedIn</p></a>
-                <a data-aos="fade-down" data-aos-duration="800" className='ctc-links' href="https://github.com/SaouiYassir/" target='_blank'><i className="bi bi-github"></i><p>Visit my GitHub</p></a>
-                <a data-aos="fade-down" data-aos-duration="1100" className='ctc-links' href="https://www.instagram.com/yassiiir_sa/" target='_blank'><i className="bi bi-instagram"></i><p>Visit my Instagram</p></a>
-                <a data-aos="fade-down" data-aos-duration="1400" className='ctc-links' href={cv} download="Yassir_Saoui_Cv.pdf"><i className="bi bi-download"></i><p>Download My CV</p></a>
+                <div data-aos="fade-down" data-aos-duration="500">
+                    <a className='ctc-links' href="https://www.linkedin.com/in/yassir-saoui/" target='_blank'><i className="bi bi-linkedin"></i><p>Visit my LinkedIn</p></a>
+                </div>
+                <div data-aos="fade-down" data-aos-duration="800">
+                    <a className='ctc-links' href="https://github.com/SaouiYassir/" target='_blank'><i className="bi bi-github"></i><p>Visit my GitHub</p></a>
+                </div>
+                <div data-aos="fade-down" data-aos-duration="1100">
+                    <a className='ctc-links' href="https://www.instagram.com/yassiiir_sa/" target='_blank'><i className="bi bi-instagram"></i><p>Visit my Instagram</p></a>
+                </div>
+                <div  data-aos="fade-down" data-aos-duration="1400">
+                    <a className='ctc-links' href={cv} download="Yassir_Saoui_Cv.pdf"><i className="bi bi-download"></i><p>Download My CV</p></a>
+                </div>                                                                            
             </div>
         </section>
     );

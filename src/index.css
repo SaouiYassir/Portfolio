@@ -2,31 +2,72 @@ html {
     scroll-behavior: smooth;
 }
 
-/* 1. Define your colors for Light Mode */
+
 :root {
-  --bg-color: #ffffff;
-  --text-color: #333333;
-  --link-color: #4B5563;
-  --header-color: rgba(255, 255, 255, 0.85);
-  --card-color: #ffffff;
-  --input-color: white;
-  --border-textarea-color: rgb(193, 193, 193);
-  --footer-color: #ffffff;
+  --bg-color:           #ffffff;
+  --primary-color:      #3B82F6;
+  --primary-hover:      #2563EB;
+  --second-color:       #ffffff;
+  --third-color:        #F3F4F6;
+  --text-color:         #333333;
+  --second-text-color:  #6B7280;
+  --header-color:       rgba(255, 255, 255, 0.85);
+  --footer-color:       #ffffff;
+  --link-color:         #4B5563;
+
+  --border-color:       #E5E7EB;
+  --shadow-card:        rgba(59, 130, 246, 0.08);
+
+  --pill-bg:            #EFF6FF;
+  --pill-text:          #1D4ED8;
+  --pill-border:        #BFDBFE;
+
+  --available-bg:       #F0FDF4;
+  --available-border:   #BBF7D0;
+  --available-text:     #15803D;
+  --available-dot:      #22C55E;
+
+  --input-border:       #CBD5E1;
+  --input-border-focus: #3B82F6;
+
+  --contact-card-bg:     #F8FAFF;
+  --contact-card-border: #BFDBFE;
 }
 
-/* 2. Define your colors for Dark Mode */
 body.dark-mode {
-  --bg-color: #121212;
-  --text-color: #e0e0e0;
-  --link-color: #f5f5f5;
-  --header-color: #1F2937;
-  --card-color: #111827;
-  --input-color: #1E293B;
-  --border-textarea-color: #334155;
-  --footer-color: #1F2937;
+  --bg-color:           #121212;
+  --second-color:       #111827;
+  --third-color:        #1F2937;
+  --fourth-color:       #EFF6FF;
+  --text-color:         #e0e0e0;
+  --second-text-color:  #9CA3AF;
+  --header-color:       #1F2937;
+  --footer-color:       #1F2937;
+  --link-color:         #f5f5f5;
+  --primary-color:      #3B82F6;
+  --primary-hover:      #2563EB;
+
+  --border-color:       #374151;
+  --shadow-card:        rgba(59, 130, 246, 0.12);
+
+  --pill-bg:            #1e3a5f;
+  --pill-text:          #93c5fd;
+  --pill-border:        #1d4ed8;
+
+  --available-bg:       #052e16;
+  --available-border:   #166534;
+  --available-text:     #4ade80;
+  --available-dot:      #4ade80;
+
+  --input-border:       #334155;
+  --input-border-focus: #3B82F6;
+
+  --contact-card-bg:     #111827;
+  --contact-card-border: #1E3A5F;
+
 }
 
-/* 3. Apply the variables to the body */
+
 body {
   background-color: var(--bg-color);
   color: var(--text-color);

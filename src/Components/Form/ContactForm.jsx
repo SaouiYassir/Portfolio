@@ -31,13 +31,11 @@ const ContactForm = () => {
       <form className='form' ref={form} onSubmit={sendEmail}>
         <h2>Contact Me</h2>
         
-        <div className='input-group'>
-          <label>Your Name</label>
-          <input type="text" name="from_name" required />
+        <div className='input-group'>          
+          <input placeholder='Your Name' type="text" name="from_name" required />
         </div>
 
-        <div className='input-group'>
-          <label>Your Email</label>
+        <div className='input-group'>          
           <input 
             type="email" 
             name="from_email" 
@@ -46,9 +44,12 @@ const ContactForm = () => {
           />
         </div>
 
-        <div className='input-group'>
-          <label>Message</label>
-          <textarea name="message" required/>
+         <div className='input-group'>          
+          <input placeholder='Subject' type="text" name="Subject" required />
+        </div>
+
+        <div className='input-group'>          
+          <textarea placeholder='Your Message' name="message" required/>
         </div>
 
         <input type="hidden" name="time" value={new Date().toLocaleString()} />

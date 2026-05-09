@@ -46,7 +46,7 @@ function Contacts() {
                                 strings: ['Let’s build something great ...'],
                                 autoStart: true,
                                 loop: false,
-                                deleteSpeed: Infinity, // never delete
+                                deleteSpeed: Infinity,
                                 delay: 50,
                                 cursor: '|',
                             }}
@@ -68,13 +68,11 @@ function Contacts() {
                     </p>
                 </div>
 
-                <a
-                    href="#ContactForm"
-                    data-aos="fade-up"
-                    data-aos-anchor-placement="center-bottom"
-                >
-                    Get in Touch
-                </a>
+                <div data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+                    <a href="#ContactForm">
+                        Get in Touch
+                    </a>
+                </div>
             </div>
 
             <ContactForm />

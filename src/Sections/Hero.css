@@ -24,7 +24,7 @@
 
 .title1-hero {
     font-size: 50px;
-    color: #3B82F6;
+    color: var(--primary-color);
     font-family: 'Roboto Mono';
 }
 
@@ -68,7 +68,7 @@
 .ctc-links {
     text-decoration: none;
     color: #fff;
-    background-color: #3B82F6;
+    background-color: var(--primary-color);
     padding: 15px;
     border-radius: 5px;
     font-family: "Merriweather Sans";

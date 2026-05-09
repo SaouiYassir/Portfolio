@@ -11,7 +11,7 @@
 
 .tile-prj {
     width: 100%;
-    color: #3B82F6;
+    color: var(--primary-color);
     display: flex;
     justify-content: center;
     font-size: 60px;
