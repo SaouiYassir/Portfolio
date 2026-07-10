@@ -1,77 +1,117 @@
-html {
-    scroll-behavior: smooth;
-}
-
+/* ==========================================================================
+   PORTFOLIO DESIGN TOKENS
+   CS Student / Frontend Freelancer Portfolio
+   Drop into :root of your global stylesheet (e.g. src/styles/tokens.css)
+   ========================================================================== */
 
 :root {
-  --bg-color:           #ffffff;
-  --primary-color:      #3B82F6;
-  --primary-hover:      #2563EB;
-  --second-color:       #ffffff;
-  --third-color:        #F3F4F6;
-  --text-color:         #333333;
-  --second-text-color:  #6B7280;
-  --header-color:       rgba(255, 255, 255, 0.85);
-  --footer-color:       #ffffff;
-  --link-color:         #4B5563;
+  /* ---------- FONTS ---------- */
+  --font-display: 'Space Grotesk', 'General Sans', sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
-  --border-color:       #E5E7EB;
-  --shadow-card:        rgba(59, 130, 246, 0.08);
+  /* ---------- TYPE SCALE ---------- */
+  --text-xs: 0.8rem;
+  --text-sm: 0.9rem;
+  --text-base: 1rem;
+  --text-lg: 1.15rem;
+  --text-xl: 1.4rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.5rem;
+  --text-4xl: 3.5rem;   /* hero, mobile */
+  --text-5xl: 4.5rem;   /* hero, desktop */
 
-  --pill-bg:            #EFF6FF;
-  --pill-text:          #1D4ED8;
-  --pill-border:        #BFDBFE;
+  --leading-tight: 1.1;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.7;
 
-  --available-bg:       #F0FDF4;
-  --available-border:   #BBF7D0;
-  --available-text:     #15803D;
-  --available-dot:      #22C55E;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
 
-  --input-border:       #CBD5E1;
-  --input-border-focus: #3B82F6;
+  /* ---------- SPACING (8px base) ---------- */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
 
-  --contact-card-bg:     #F8FAFF;
-  --contact-card-border: #BFDBFE;
+  /* ---------- RADIUS / SHADOW ---------- */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 1px 3px rgba(20, 22, 26, 0.06);
+  --shadow-md: 0 8px 24px rgba(20, 22, 26, 0.08);
+
+  /* ---------- COLOR — LIGHT MODE (default) ---------- */
+  --background: #FAFAFB;
+  --surface: #F1F3F6;
+  --surface-raised: #FFFFFF;
+  --border: #E4E7EC;
+
+  --text-primary: #14161A;
+  --text-secondary: #5B616E;
+  --text-muted: #8A909B;
+
+  --primary: #3B82F6;
+  --primary-hover: #2563EB;
+  --primary-tint: #EAF1FF;
+
+  --accent: #10B981;
+  --accent-tint: #E5FAF2;
+
+  --danger: #EF4444;
+  --warning: #F59E0B;
 }
 
+/* ---------- COLOR — DARK MODE ---------- */
 body.dark-mode {
-  --bg-color:           #121212;
-  --second-color:       #111827;
-  --third-color:        #1F2937;
-  --fourth-color:       #EFF6FF;
-  --text-color:         #e0e0e0;
-  --second-text-color:  #9CA3AF;
-  --header-color:       #1F2937;
-  --footer-color:       #1F2937;
-  --link-color:         #f5f5f5;
-  --primary-color:      #3B82F6;
-  --primary-hover:      #2563EB;
+  --background: #0B0E14;
+  --surface: #151920;
+  --surface-raised: #1B212B;
+  --border: #262B34;
 
-  --border-color:       #374151;
-  --shadow-card:        rgba(59, 130, 246, 0.12);
+  --text-primary: #F2F4F7;
+  --text-secondary: #9AA1AC;
+  --text-muted: #6B7280;
 
-  --pill-bg:            #1e3a5f;
-  --pill-text:          #93c5fd;
-  --pill-border:        #1d4ed8;
+  --primary: #5B9DFF;
+  --primary-hover: #7CB1FF;
+  --primary-tint: #17233A;
 
-  --available-bg:       #052e16;
-  --available-border:   #166534;
-  --available-text:     #4ade80;
-  --available-dot:      #4ade80;
+  --accent: #34D399;
+  --accent-tint: #10261F;
 
-  --input-border:       #334155;
-  --input-border-focus: #3B82F6;
-
-  --contact-card-bg:     #111827;
-  --contact-card-border: #1E3A5F;
-
+  --danger: #F87171;
+  --warning: #FBBF24;
 }
 
-
+/* ---------- BASE TYPE ELEMENTS ---------- */
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
-  margin: 0;
-  font-family: sans-serif;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--text-primary);
+  background: var(--background);
+}
+
+h1, h2, h3, .display {
+  font-family: var(--font-display);
+  line-height: var(--leading-tight);
+  font-weight: var(--weight-semibold);
+}
+
+h1 { font-size: var(--text-5xl); }
+h2 { font-size: var(--text-3xl); }
+h3 { font-size: var(--text-2xl); }
+
+code, .mono, .tag {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+@media (max-width: 640px) {
+  h1 { font-size: var(--text-4xl); }
 }
