@@ -1,111 +1,117 @@
+/* ==========================================================================
+   PORTFOLIO DESIGN TOKENS
+   CS Student / Frontend Freelancer Portfolio
+   Drop into :root of your global stylesheet (e.g. src/styles/tokens.css)
+   ========================================================================== */
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  /* ---------- FONTS ---------- */
+  --font-display: 'Space Grotesk', 'General Sans', sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  /* ---------- TYPE SCALE ---------- */
+  --text-xs: 0.8rem;
+  --text-sm: 0.9rem;
+  --text-base: 1rem;
+  --text-lg: 1.15rem;
+  --text-xl: 1.4rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.5rem;
+  --text-4xl: 3.5rem;   /* hero, mobile */
+  --text-5xl: 4.5rem;   /* hero, desktop */
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --leading-tight: 1.1;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.7;
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* ---------- SPACING (8px base) ---------- */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+
+  /* ---------- RADIUS / SHADOW ---------- */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 1px 3px rgba(20, 22, 26, 0.06);
+  --shadow-md: 0 8px 24px rgba(20, 22, 26, 0.08);
+
+  /* ---------- COLOR — LIGHT MODE (default) ---------- */
+  --background: #FAFAFB;
+  --surface: #F1F3F6;
+  --surface-raised: #FFFFFF;
+  --border: #E4E7EC;
+
+  --text-primary: #14161A;
+  --text-secondary: #5B616E;
+  --text-muted: #8A909B;
+
+  --primary: #3B82F6;
+  --primary-hover: #2563EB;
+  --primary-tint: #EAF1FF;
+
+  --accent: #10B981;
+  --accent-tint: #E5FAF2;
+
+  --danger: #EF4444;
+  --warning: #F59E0B;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
+/* ---------- COLOR — DARK MODE ---------- */
+body.dark-mode {
+  --background: #0B0E14;
+  --surface: #151920;
+  --surface-raised: #1B212B;
+  --border: #262B34;
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+  --text-primary: #F2F4F7;
+  --text-secondary: #9AA1AC;
+  --text-muted: #6B7280;
+
+  --primary: #5B9DFF;
+  --primary-hover: #7CB1FF;
+  --primary-tint: #17233A;
+
+  --accent: #34D399;
+  --accent-tint: #10261F;
+
+  --danger: #F87171;
+  --warning: #FBBF24;
 }
 
+/* ---------- BASE TYPE ELEMENTS ---------- */
 body {
-  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--text-primary);
+  background: var(--background);
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+h1, h2, h3, .display {
+  font-family: var(--font-display);
+  line-height: var(--leading-tight);
+  font-weight: var(--weight-semibold);
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+h1 { font-size: var(--text-5xl); }
+h2 { font-size: var(--text-3xl); }
+h3 { font-size: var(--text-2xl); }
+
+code, .mono, .tag {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+@media (max-width: 640px) {
+  h1 { font-size: var(--text-4xl); }
 }
