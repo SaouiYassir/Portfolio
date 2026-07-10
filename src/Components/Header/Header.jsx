@@ -65,16 +65,7 @@ function Header() {
                 <Link to="/projects" onClick={handleLinkClick}>Projects</Link>
                 <Link to="/services" onClick={handleLinkClick}>Services</Link>
                 <Link to="/contact" onClick={handleLinkClick}>Contact</Link>
-                <div
-                    className="theme-toggle theme-toggle--mobile"
-                    onClick={toggleTheme}
-                    role="button"
-                    tabIndex={0}
-                    aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-                    onKeyDown={(e) => e.key === 'Enter' && toggleTheme()}
-                >
-                    <i className={isDarkMode ? 'bi bi-sun-fill' : 'bi bi-moon-fill'}></i>
-                </div>
+                
             </nav>
         </header>
     )
