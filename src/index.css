@@ -11,24 +11,24 @@
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
   /* ---------- TYPE SCALE ---------- */
-  --text-xs: 0.8rem;
-  --text-sm: 0.9rem;
-  --text-base: 1rem;
-  --text-lg: 1.15rem;
-  --text-xl: 1.4rem;
-  --text-2xl: 1.75rem;
-  --text-3xl: 2.5rem;
-  --text-4xl: 3.5rem;   /* hero, mobile */
-  --text-5xl: 4.5rem;   /* hero, desktop */
+--text-xs: 0.875rem;   /* was 0.8rem */
+--text-sm: 1rem;       /* was 0.9rem */
+--text-base: 1.125rem; /* was 1rem */
+--text-lg: 1.35rem;    /* was 1.15rem */
+--text-xl: 1.65rem;    /* was 1.4rem */
+--text-2xl: 2.1rem;    /* was 1.75rem */
+--text-3xl: 3rem;      /* was 2.5rem */
+--text-4xl: 4.25rem;   /* hero, mobile — was 3.5rem */
+--text-5xl: 5.75rem;   /* hero, desktop — was 4.5rem */
 
-  --leading-tight: 1.1;
-  --leading-normal: 1.5;
-  --leading-relaxed: 1.7;
+--leading-tight: 1.1;
+--leading-normal: 1.55;
+--leading-relaxed: 1.75;
 
-  --weight-regular: 400;
-  --weight-medium: 500;
-  --weight-semibold: 600;
-  --weight-bold: 700;
+--weight-regular: 400;
+--weight-medium: 500;
+--weight-semibold: 600;
+--weight-bold: 700;
 
   /* ---------- SPACING (8px base) ---------- */
   --space-xs: 0.5rem;

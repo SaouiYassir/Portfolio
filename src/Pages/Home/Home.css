@@ -48,7 +48,7 @@
 .text-hero h1 {
   font-family: var(--font-display);
   font-weight: var(--weight-bold);
-  font-size: var(--text-5xl);
+  font-size: var(--text-4xl);
   line-height: var(--leading-tight);
   color: var(--primary);
   margin: 0 0 var(--space-sm);
@@ -114,8 +114,8 @@
 
 .img-hero {
   flex-shrink: 0;
-  width: 260px;
-  height: 260px;
+  width: 390px;
+  height: 390px;
   border-radius: 50%;
   border: 1.5px solid var(--border);
   padding: 6px;
