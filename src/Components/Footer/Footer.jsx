@@ -34,7 +34,7 @@ function Footer() {
           <ul>
             {FOOTER_LINKS.map(link => (
               <li key={link.to}>
-                <Link to={link.to}>{link.label}</Link>
+                <Link to={link.to} onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}>{link.label}</Link>
               </li>
             ))}
           </ul>

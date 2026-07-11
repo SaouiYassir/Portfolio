@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 
+import Loader from './Components/Loader/Loader.jsx'
 import Header from './Components/Header/Header.jsx'
 import Home from './Pages/Home/Home.jsx'
 import About from './Pages/About/About.jsx'
@@ -14,6 +15,7 @@ import Footer from './Components/Footer/Footer.jsx'
 function App() {
   return (
     <BrowserRouter>
+      <Loader />
       <Header />   
       
       <Routes>

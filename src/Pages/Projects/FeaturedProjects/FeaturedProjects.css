@@ -1,6 +1,9 @@
 /* FeaturedProjects.css */
 .featured-projects {
   padding: var(--space-2xl) 5%;
+  gap: 50px;
+  display: flex;
+  flex-direction: column;
 }
 
 .section-head {
