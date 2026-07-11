@@ -1,27 +1,18 @@
-import './Home.css'
-
-import CV from '../../../public/Mon_CV.pdf'
-import pic from '../../../public/hero-pic.jpg'
+import Hero from './Sections/Hero/Hero';
+import StackStrip from './Sections/StackStrip/StackStrip';
+import FeaturedProjects from '../../Components/FeaturedProjects/FeaturedProjects';
+import Process from './Sections/Process/Process';
+import Education from './Sections/Education/Education';
 
 function Home() {
     return(
-        <div className="home-container">
-            <div className="hero-container">
-                <div className="text-hero">
-                    <p>Available for freelance work</p>
-                    <h1>Hi, I'm Yassir</h1>
-                    <p>Computer science student with a strong interest in software development and modern web technologies. Currently building projects with HTML, CSS, JavaScript and React.</p>
-                    <div className="hero-btns">
-                        <a className='ctc-links' href={CV} download="Yassir_Saoui_Cv.pdf"><p><i class="bi bi-download"></i>     Download My CV</p></a>
-                        <a href="https://linkedin.com/in/yassir-saoui/" target='_blanc'><i class="bi bi-linkedin"></i>     LinkedIn</a>
-                        <a href="https://github.com/SaouiYassir/"  target='_blanc'><i class="bi bi-github"></i>     GitHub</a>
-                    </div>
-                </div>
-                <div className="img-hero">
-                    <img src={pic} alt="" />
-                </div>
-            </div>
-        </div>
+        <>
+            <Hero />
+            <StackStrip />
+            <Education />
+            <FeaturedProjects />
+            <Process />
+        </>
     );
 }
 

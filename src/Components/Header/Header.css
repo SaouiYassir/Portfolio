@@ -2,38 +2,61 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem 5%;
-  background-color: var(--background);
-  border-bottom: 1px solid var(--border);
+  padding: 1.1rem 5%;
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
   position: sticky;
   top: 0;
   z-index: 1000;
   font-family: var(--font-body);
+  transition: background-color 0.3s ease, border-color 0.3s ease, padding 0.3s ease, backdrop-filter 0.3s ease;
 }
 
+/* ---------- Scroll state ---------- */
+.header-scrolled {
+  background-color: color-mix(in srgb, var(--background) 85%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: 0.8rem 5%;
+}
+
+/* ---------- Logo — monogram, quieter than hero ---------- */
 .logo {
-  font-family: var(--font-display);
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: -0.02em;
-  cursor: pointer;
+  text-decoration: none;
 }
 
+.logo-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+}
+
+/* ---------- Nav ---------- */
 .nav-links {
   display: flex;
-  gap: 2.5rem;
-  margin-left: auto; 
-  margin-right: 2.5rem;
+  align-items: center;
+  gap: 2rem;
+  margin: 0 auto;
 }
 
 .nav-links a {
   text-decoration: none;
   color: var(--text-secondary);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   transition: color 0.25s ease;
   position: relative;
+  padding: 6px 0;
 }
 
 .nav-links a::after {
@@ -42,7 +65,7 @@ header {
   width: 100%;
   transform: scaleX(0);
   height: 2px;
-  bottom: -4px;
+  bottom: -2px;
   left: 0;
   background-color: var(--primary);
   transform-origin: bottom right;
@@ -58,21 +81,78 @@ header {
   transform-origin: bottom left;
 }
 
+/* Active page indicator */
+.nav-links a.active {
+  color: var(--primary);
+}
+
+.nav-links a.active::after {
+  transform: scaleX(1);
+}
+
 .nav {
   display: none;
 }
 
+/* ---------- Actions group ---------- */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.theme-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 1rem;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--primary);
+  background-color: var(--surface);
+}
+
+/* ---------- Header CTA ---------- */
+.header-cta {
+  text-decoration: none;
+  background-color: var(--primary);
+  color: var(--surface-raised);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.2s ease;
+}
+
+.header-cta:hover {
+  background-color: var(--primary-hover);
+}
+
+.header-cta--mobile {
+  display: none;
+}
+
+/* ---------- Hamburger ---------- */
 .hamburger {
-  display: none; 
+  display: none;
   cursor: pointer;
   flex-direction: column;
   gap: 5px;
   padding: 8px;
   border-radius: var(--radius-sm);
   transition: background-color 0.2s ease;
-  
-  position: relative; 
-  z-index: 1010; 
+  position: relative;
+  z-index: 1010;
 }
 
 .hamburger:hover {
@@ -81,7 +161,7 @@ header {
 
 .hamburger .bar {
   display: block;
-  width: 22px;
+  width: 20px;
   height: 2px;
   background-color: var(--text-primary);
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -94,7 +174,7 @@ header {
 
 .hamburger.active .bar:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
-  background-color: var(--primary); 
+  background-color: var(--primary);
 }
 
 .hamburger.active .bar:nth-child(3) {
@@ -102,10 +182,16 @@ header {
   background-color: var(--primary);
 }
 
-
 @media screen and (max-width: 768px) {
-  .nav-links {
+  .nav-links,
+  .header-cta:not(.header-cta--mobile) {
     display: none;
+  }
+
+  .header-actions {
+    border: none;
+    padding: 0;
+    gap: 0.5rem;
   }
 
   .hamburger {
@@ -118,20 +204,17 @@ header {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
     background-color: var(--background);
-    
     opacity: 0;
     visibility: hidden;
     transform: scale(1.05);
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-    
-    z-index: 1000; 
+    z-index: 1000;
   }
 
   .nav.active {
@@ -143,54 +226,24 @@ header {
   .nav a {
     text-decoration: none;
     font-family: var(--font-display);
-    font-size: 2rem;
+    font-size: 1.75rem;
     color: var(--text-primary);
     font-weight: 600;
     transition: color 0.2s ease;
   }
 
+  .nav a.active {
+    color: var(--primary);
+  }
+
   .nav a:hover {
     color: var(--primary);
   }
-}
 
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  margin-left: 2rem;
-}
-
-.theme-toggle {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-sm);
-  color: var(--text-secondary);
-  font-size: 1.1rem;
-  transition: color 0.2s ease, background-color 0.2s ease;
-}
-
-.theme-toggle:hover {
-  color: var(--primary);
-  background-color: var(--surface);
-}
-
-.theme-toggle--mobile {
-  display: none;
-}
-
-@media screen and (max-width: 768px) {
-  .theme-toggle--mobile {
-    display: flex;
-    color: var(--text-primary);
-    width: auto;
-    height: auto;
-    font-size: 1.6rem;
+  .header-cta--mobile {
+    display: inline-block;
     margin-top: 1rem;
+    font-size: 1.1rem;
+    padding: 12px 28px;
   }
-
 }
