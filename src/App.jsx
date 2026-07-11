@@ -8,6 +8,7 @@ import About from './Pages/About/About.jsx'
 import Contact from './Pages/Contact/Contact.jsx'
 import Projects from './Pages/Projects/Projects.jsx'
 import Services from './Pages/Services/Services.jsx'
+import Footer from './Components/Footer/Footer.jsx'
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
         <Route path='/services' element={<Services />}></Route>
 
       </Routes>
+
+      <Footer />
     </BrowserRouter>
   )
 }
