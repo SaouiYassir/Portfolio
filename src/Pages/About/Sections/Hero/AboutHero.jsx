@@ -14,7 +14,7 @@ function AboutHero() {
         <p>
           I started building web interfaces before I formally studied computer science —
           the two paths converged fast. Today I split my time between coursework at
-          Faculté des Sciences Semlalia and freelance frontend work, shipping real
+          Sciences Faculty Semlalia and freelance frontend work, shipping real
           projects for real clients rather than just class assignments.
         </p>
       </div>
