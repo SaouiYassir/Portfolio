@@ -58,7 +58,7 @@ function Footer() {
           <p className="footer-cta-text">
             Have a project in mind? Let's talk about it.
           </p>
-          <Link to="/contact" className="footer-cta">
+          <Link to="/contact" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })} className="footer-cta">
             Get in touch <i className="bi bi-arrow-right"></i>
           </Link>
         </div>
