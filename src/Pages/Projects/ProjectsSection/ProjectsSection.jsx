@@ -8,7 +8,7 @@ function ProjectsSection() {
       <div className="section-head">
         <p className="section-eyebrow">Selected work</p>
         <h1>Projects that shipped, not just prototypes</h1>
-        <p className="projects-stat">3 shipped projects · 1 freelance client · 0 backend costs</p>
+        <p className="projects-stat">2 shipped projects · 1 freelance client · 0 backend costs</p>
       </div>
 
       <ProjectGrid projects={PROJECTS} />
