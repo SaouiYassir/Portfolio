@@ -1,12 +1,10 @@
-// FeaturedProjects.jsx
 import { Link } from 'react-router-dom'
-import { PROJECTS } from '../../../Data/Projects'
+import ProjectGrid from '../../../Components/ProjectGrid/ProjectGrid'
+import { getFeaturedProjects } from '../../../Data/Projects'
 import './FeaturedProjects.css'
 
-import ProjectCard from '../../../Components/ProjectCard/ProjectCard'
-
 function FeaturedProjects() {
-  const featured = PROJECTS.slice(0, 3)
+  const featured = getFeaturedProjects(3)
 
   return (
     <section className="featured-projects">
@@ -15,13 +13,9 @@ function FeaturedProjects() {
         <h2>Projects that shipped, not just prototypes</h2>
       </div>
 
-      <div className="projects-grid">
-        {featured.map(project => (
-          <ProjectCard key={project.title} {...project} />
-        ))}
-      </div>
+      <ProjectGrid projects={featured} />
 
-      <Link to="/projects" className="view-all-link" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}>
+      <Link to="/projects" className="view-all-link">
         View all projects <i className="bi bi-arrow-right"></i>
       </Link>
     </section>

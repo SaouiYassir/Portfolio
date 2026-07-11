@@ -1,5 +1,4 @@
-// ProjectsSection.jsx — full grid
-import ProjectCard from '../../../Components/ProjectCard/ProjectCard'
+import ProjectGrid from '../../../Components/ProjectGrid/ProjectGrid'
 import { PROJECTS } from '../../../Data/Projects'
 import './ProjectsSection.css'
 
@@ -12,11 +11,7 @@ function ProjectsSection() {
         <p className="projects-stat">3 shipped projects · 1 freelance client · 0 backend costs</p>
       </div>
 
-      <div className="projects-page-grid">
-        {PROJECTS.map(project => (
-          <ProjectCard key={project.title} {...project} />
-        ))}
-      </div>
+      <ProjectGrid projects={PROJECTS} />
     </section>
   )
 }
