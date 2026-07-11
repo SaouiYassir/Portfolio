@@ -4,21 +4,21 @@ import './Education.css'
 const CURSUS = [
   {
     year: '2025 — 2026',
-    title: 'L2 Informatique ( DEUG )',
+    title: 'DEUG in Computer Science — Second Year',
     place: 'Faculté des Sciences Semlalia, Marrakech',
-    desc: 'Core computer science: algorithms, data structures, systems programming, and software engineering fundamentals.',
+    desc: 'Advanced coursework in algorithms, data structures, operating systems, databases, and software engineering.',
   },
   {
     year: '2024 — 2025',
     title: 'L1 Informatique',
     place: 'Faculté des Sciences Semlalia, Marrakech',
-    desc: 'Foundations year — programming logic, discrete math, and first exposure to web development.',
+    desc: 'Built foundations in programming, discrete mathematics, computer architecture, and web development.',
   },
   {
     year: '2023 — 2024',
     title: 'Baccalauréat',
     place: 'Wahat Ezzaitoune 2',
-    desc: 'Foundations year — programming logic, discrete math, and first exposure to web development.',
+    desc: 'Developed a strong foundation in mathematics, physics, logical reasoning, and problem-solving.',
   }
 ]
 
