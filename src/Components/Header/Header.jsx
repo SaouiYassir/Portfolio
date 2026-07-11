@@ -1,96 +1,103 @@
-import { useEffect, useState } from 'react';
-import './Header.css';
+import { Link, useLocation } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import './Header.css'
+
+const NAV_LINKS = [
+  { label: 'Home', to: '/' },
+  { label: 'About', to: '/about' },
+  { label: 'Projects', to: '/projects' },
+  { label: 'Services', to: '/services' },
+]
 
 function Header() {
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    const savedTheme = localStorage.getItem('theme');
-    return savedTheme === 'dark';
-  });
+    const [isOpen, setIsOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(() => {
+        const savedTheme = localStorage.getItem('theme');
+        return savedTheme === 'dark';
+    });
+    const location = useLocation();
 
-  const [menuOpen, setMenuOpen] = useState(false);
+    useEffect(() => {
+        document.body.classList.toggle('dark-mode', isDarkMode);
+        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    }, [isDarkMode]);
 
-  useEffect(() => {
-    if (isDarkMode) {
-      document.body.classList.add('dark-mode');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.body.classList.remove('dark-mode');
-      localStorage.setItem('theme', 'light');
-    }
-  }, [isDarkMode]);
+    useEffect(() => {
+        const handleScroll = () => setScrolled(window.scrollY > 12);
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
-  
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 768) setMenuOpen(false);
+    const toggleMenu = () => setIsOpen(!isOpen);
+    const toggleTheme = () => setIsDarkMode(prev => !prev);
+
+    const handleLinkClick = () => {
+        setIsOpen(false);
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
-  const toggleTheme = () => setIsDarkMode(prev => !prev);
-  const toggleMenu = () => setMenuOpen(prev => !prev);
+    const isActive = (path) => location.pathname === path;
 
-  const handleRefresh = () => {
-    window.location.reload();
-  };
+    return (
+        <header data-aos="fade-down" className={scrolled ? 'header-scrolled' : ''}>
+            <Link to="/" className="logo" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}>
+                <span className="logo-mark">YS</span>
+            </Link>
 
-  return (
-    <>
-      <header className={isDarkMode ? 'dark-mode-header' : ''}>
-        
-        <div className='right-part' onClick={handleRefresh}>YASSIR SAOUI</div>
+            <nav className="nav-links">
+                {NAV_LINKS.map(link => (
+                    <Link
+                        key={link.to}
+                        to={link.to}
+                        className={isActive(link.to) ? 'active' : ''}
+                        onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}
+                    >
+                        {link.label}
+                    </Link>
+                ))}
+            </nav>
 
-        
-        <div className='list-elements'>
-          <ul>
-            <li><a className='header-links' href="#">Home</a></li>
-            <li><a className='header-links' href="#About">About Me</a></li>
-            <li><a className='header-links' href="#Projects">Projects</a></li>
-            <li><a className='header-links' href="#Contacts">Contact</a></li>
-          </ul>
-        </div>
+            <div className="header-actions">
+                <div
+                    className="theme-toggle"
+                    onClick={toggleTheme}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+                    onKeyDown={(e) => e.key === 'Enter' && toggleTheme()}
+                >
+                    <i className={isDarkMode ? 'bi bi-sun-fill' : 'bi bi-moon-fill'}></i>
+                </div>
 
-        
-        <div className='left-part'>
-          <i onClick={toggleTheme} style={{ cursor: 'pointer' }} className={isDarkMode ? "bi bi-sun-fill" : "bi bi-moon-fill"}></i>
-        </div>
+                <Link to="/contact" className="header-cta" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}>
+                    Let's talk
+                </Link>
 
-        
-        <div className='mobile-controls'>
-          <div onClick={toggleTheme} style={{ cursor: 'pointer' }}>
-            <i className={isDarkMode ? "bi bi-sun-fill" : "bi bi-moon-fill"}></i>
-          </div>
+                <div className={`hamburger ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
+                    <span className="bar"></span>
+                    <span className="bar"></span>
+                    <span className="bar"></span>
+                </div>
+            </div>
 
-          
-          <button
-            className={`hamburger ${menuOpen ? 'open' : ''}`}
-            onClick={toggleMenu}
-            aria-label="Toggle navigation"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-      </header>
-
-      
-      <nav className={`mobile-menu ${menuOpen ? 'mobile-menu--open' : ''}`}>
-        <ul>
-          <li><a className='header-links' href="#" onClick={() => setMenuOpen(false)}>Home</a></li>
-          <li><a className='header-links' href="#About" onClick={() => setMenuOpen(false)}>About Me</a></li>
-          <li><a className='header-links' href="#Projects" onClick={() => setMenuOpen(false)}>Projects</a></li>
-          <li><a className='header-links' href="#Contacts" onClick={() => setMenuOpen(false)}>Contact</a></li>
-        </ul>
-      </nav>
-
-      
-      {menuOpen && (
-        <div className='menu-backdrop' onClick={() => setMenuOpen(false)} />
-      )}
-    </>
-  );
+            <nav className={`nav ${isOpen ? 'active' : ''}`}>
+                {NAV_LINKS.map(link => (
+                    <Link
+                        key={link.to}
+                        to={link.to}
+                        className={isActive(link.to) ? 'active' : ''}
+                        onClick={handleLinkClick}
+                    >
+                        {link.label}
+                    </Link>
+                ))}
+                <Link to="/contact" className="header-cta header-cta--mobile" onClick={handleLinkClick}>
+                    Let's talk
+                </Link>
+            </nav>
+        </header>
+    )
 }
 
-export default Header;
+export default Header

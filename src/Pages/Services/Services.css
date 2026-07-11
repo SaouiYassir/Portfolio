@@ -1,0 +1,24 @@
+/* ServicesPage.css */
+.services-hero {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--space-2xl) 5% var(--space-lg);
+  text-align: center;
+}
+
+.services-hero h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+  line-height: var(--leading-tight);
+  margin: 8px 0 var(--space-md);
+}
+
+.services-hero-text {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+  margin: 0;
+}

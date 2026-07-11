@@ -1,17 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/YS-icon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Yassir Saoui: Frontend Developer & CS student. Explore my projects in React, C++, and modern web. Available for internships & freelance work."/>
-    <title>Yassir Saoui — Frontend Developer</title>
-    <style>#loader { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; background: #ffffff; transition: opacity 0.6s ease, visibility 0.6s ease; } body.dark-mode #loader { background: #121212; } #loader.hidden { opacity: 0; visibility: hidden; } .loader-name { font-family: 'Roboto Mono', monospace; font-size: 16px; letter-spacing: 0.15em; color: #3B82F6; margin: 0 0 18px; } .bar-track { width: 180px; height: 2px; background: rgba(59,130,246,0.15); border-radius: 2px; overflow: hidden; } .bar-fill { height: 100%; background: #3B82F6; animation: barSweep 1.8s ease-in-out infinite; } @keyframes barSweep { 0% { width: 0%; margin-left: 0%; } 50% { width: 60%; margin-left: 20%; } 100% { width: 0%; margin-left: 100%; } } .loader-sub { font-family: 'Roboto Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #6B7280; margin-top: 16px; animation: blink 1.4s ease-in-out infinite; } @keyframes blink { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" />
+
+    <link rel="icon" href="/YS-icon.ico" />
+
+    <title>Yassir Saoui — Frontend Developer & CS Student</title>
+    <meta name="description" content="Frontend developer and computer science student building fast, modern web experiences — from freelance client projects to open-source tools." />
+    <meta name="author" content="Yassir Saoui" />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="canonical" href="https://yassirsaoui.vercel.app/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Yassir Saoui" />
+    <meta property="og:image" content="https://yassirsaoui.vercel.app/Gallery/og-default.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div id="loader"> <div class="loader-inner"> <p class="loader-name">YASSIR SAOUI</p> <div class="bar-track"> <div class="bar-fill"></div> </div> <p class="loader-sub">LOADING ...</p> </div> </div>
     <div id="root"></div>
+    <script>
+      if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+      }
+    </script>
     <script type="module" src="/src/main.jsx"></script>
-    <script> if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-mode'); </script>
   </body>
 </html>
