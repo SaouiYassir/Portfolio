@@ -1,16 +1,99 @@
-# React + Vite
+# Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive personal portfolio built with React and Vite.
 
-Currently, two official plugins are available:
+This website presents my skills, education, services, and development projects. Each project has a dedicated page containing detailed information, technologies used, screenshots, source code, and a live demo.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Live Demo
 
-## React Compiler
+[View the Portfolio](https://yassirsaoui.vercel.app)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- Responsive design for desktop, tablet, and mobile
+- Multi-page navigation using React Router
+- Reusable and well-structured React components
+- Dedicated detail page for each project
+- Project descriptions, technologies, links, and screenshots
+- Contact form powered by EmailJS
+- Dynamic SEO metadata
+- `sitemap.xml` and `robots.txt`
+- Deployment on Vercel
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Technologies Used
+
+- React
+- Vite
+- JavaScript
+- HTML5
+- CSS3
+- React Router
+- EmailJS
+- React Helmet Async
+- Git
+- GitHub
+- Vercel
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/SaouiYassir/Portfolio.git
+```
+
+Open the project directory:
+
+```bash
+cd Portfolio
+```
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+## Available Scripts
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+Run ESLint:
+
+```bash
+npm run lint
+```
+
+## Author
+
+**Yassir Saoui**
+
+- [Portfolio](https://yassirsaoui.vercel.app)
+- [GitHub](https://github.com/SaouiYassir)
+- [LinkedIn](https://www.linkedin.com/in/yassir-saoui/)
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
