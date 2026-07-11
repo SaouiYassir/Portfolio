@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 
-const SITE_URL = 'https://saouiyassir.github.io'
+const SITE_URL = 'https://yassirsaoui.vercel.app'
 const DEFAULT_IMAGE = `${SITE_URL}/Gallery/og-default.jpg`
 const SITE_TITLE = 'Yassir Saoui'
 
