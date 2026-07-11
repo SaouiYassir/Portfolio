@@ -1,4 +1,27 @@
+// import { useParams, Link } from 'react-router-dom'
+// import { getProjectBySlug, getNextProject } from '../../../Data/Projects'
+// import './ProjectDetail.css'
+
+// function ProjectDetail() {
+//   const { slug } = useParams()
+//   const project = getProjectBySlug(slug)
+
+//   if (!project) {
+//     return (
+//       <section className="project-detail-notfound">
+//         <h1>Project not found</h1>
+//         <Link to="/projects">Back to all projects</Link>
+//       </section>
+//     )
+//   }
+
+//   const nextProject = getNextProject(project.slug)
+
+//   return (
+//     <article className="project-detail">
+
 import { useParams, Link } from 'react-router-dom'
+import SEO from '../../../Components/SEO/SEO'
 import { getProjectBySlug, getNextProject } from '../../../Data/Projects'
 import './ProjectDetail.css'
 
@@ -16,9 +39,18 @@ function ProjectDetail() {
   }
 
   const nextProject = getNextProject(project.slug)
+  const ogImage = project.gallery[0]
+    ? `https://saouiyassir.github.io${project.gallery[0]}`
+    : undefined
 
   return (
     <article className="project-detail">
+      <SEO
+        title={project.title}
+        description={project.pitch}
+        path={`/projects/${project.slug}`}
+        image={ogImage}
+      />
       <div className="project-detail-header">
         <Link to="/projects" className="back-link">
           <i className="bi bi-arrow-left"></i> All projects
