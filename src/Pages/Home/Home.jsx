@@ -1,6 +1,6 @@
 import Hero from './Sections/Hero/Hero';
 import StackStrip from './Sections/StackStrip/StackStrip';
-import FeaturedProjects from '../../Components/FeaturedProjects/FeaturedProjects';
+import Projects from '../Projects/Projects';
 import Process from './Sections/Process/Process';
 import Education from './Sections/Education/Education';
 
@@ -10,7 +10,7 @@ function Home() {
             <Hero />
             <StackStrip />
             <Education />
-            <FeaturedProjects />
+            <Projects page={false} />
             <Process />
         </>
     );
