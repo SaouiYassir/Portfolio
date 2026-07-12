@@ -1,7 +1,7 @@
 {
-  "name": "template",
+  "name": "yassir-saoui-portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,7 +12,6 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "bootstrap-icons": "^1.13.1",
-    "emailjs": "^5.0.1",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-helmet-async": "^3.0.0",

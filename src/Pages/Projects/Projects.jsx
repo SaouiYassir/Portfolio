@@ -16,7 +16,9 @@ function Projects({ page }) {
                 description="Selected work from Yassir Saoui — a shipped freelance car rental platform, a custom-built portfolio design system, and an open-source typewriter animation library."
                 path="/projects"
             />
-            <ProjectsSection />
+            <main>
+                <ProjectsSection />
+            </main>
         </>
     )
 }

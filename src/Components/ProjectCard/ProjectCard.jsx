@@ -13,7 +13,7 @@ function ProjectCard({ project }) {
   const { title, pitch, tags = [] } = project
 
   return (
-    <Link to={getProjectLink(project)} className="project-card">
+    <Link to={getProjectLink(project)} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="project-card">
       <div className="project-card-top">
         <h3>{title}</h3>
         <i className="bi bi-arrow-up-right"></i>

@@ -2,6 +2,10 @@ import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 import './Form.css'
 
+const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
 const initialForm = {
     from_name: '',
     from_email: '',
@@ -46,11 +50,11 @@ function ContactForm() {
 
         try {
             await emailjs.send(
-                'service_t3kgw2g',
-                'template_5s7byy3',
+                serviceId, 
+                templateId,
                 templateParams,
                 {
-                    publicKey: 'shAkDUqexRq2d1Kz2',
+                    publicKey: publicKey,
                 }
             )
 

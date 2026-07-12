@@ -11,9 +11,11 @@ function About() {
                 description="Computer science student at Faculté des Sciences Semlalia and freelance frontend developer — the story behind the code, and how one client project evolved from prototype to production."
                 path="/about"
             />
-            <AboutHero />
-            <SkillsGrouped />
-            <Education />
+            <main>
+                <AboutHero />
+                <SkillsGrouped />
+                <Education />
+            </main>
         </>
     );
 }

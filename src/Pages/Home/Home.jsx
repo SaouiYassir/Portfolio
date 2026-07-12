@@ -13,11 +13,13 @@ function Home() {
         description="Yassir Saoui — frontend developer and computer science student in Marrakech, building fast, modern web experiences for clients and personal projects."
         path="/"
       />
-      <Hero />
-      <StackStrip />
-      <FeaturedProjects />
-      <Process />
-      <Education />
+      <main>
+        <Hero />
+        <StackStrip />
+        <FeaturedProjects />
+        <Process />
+        <Education />
+      </main>
     </>
   )
 }

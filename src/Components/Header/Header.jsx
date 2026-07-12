@@ -3,10 +3,10 @@ import React, { useState, useEffect } from 'react'
 import './Header.css'
 
 const NAV_LINKS = [
-  { label: 'Home', to: '/' },
-  { label: 'About', to: '/about' },
-  { label: 'Projects', to: '/projects' },
-  { label: 'Services', to: '/services' },
+    { label: 'Home', to: '/' },
+    { label: 'About', to: '/about' },
+    { label: 'Projects', to: '/projects' },
+    { label: 'Services', to: '/services' },
 ]
 
 function Header() {
@@ -74,14 +74,21 @@ function Header() {
                     Let's talk
                 </Link>
 
-                <div className={`hamburger ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
-                    <span className="bar"></span>
-                    <span className="bar"></span>
-                    <span className="bar"></span>
-                </div>
+                <button
+                    type="button"
+                    className={`hamburger ${isOpen ? 'active' : ''}`}
+                    aria-expanded={isOpen}
+                    aria-controls="mobile-navigation"
+                    aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+                    onClick={toggleMenu}
+                >
+                    <span aria-hidden="true" />
+                    <span aria-hidden="true" />
+                    <span aria-hidden="true" />
+                </button>
             </div>
 
-            <nav className={`nav ${isOpen ? 'active' : ''}`}>
+            <nav id="mobile-navigation" className={`nav ${isOpen ? 'active' : ''}`}>
                 {NAV_LINKS.map(link => (
                     <Link
                         key={link.to}
