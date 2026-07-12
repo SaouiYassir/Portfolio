@@ -9,6 +9,7 @@ const About = lazy(() => import('./Pages/About/About'))
 const Projects = lazy(() => import('./Pages/Projects/Projects'))
 const Services = lazy(() => import('./Pages/Services/Services')) 
 const Contact = lazy(() => import('./Pages/Contact/Contact'))
+const Privacy = lazy(() => import('./Pages/Privacy/Privacy'))
 import ProjectDetail from './Pages/Projects/ProjectDetail/ProjectDetail.jsx'
 import Footer from './Components/Footer/Footer.jsx'
 import NotFound from './Pages/NotFound/NotFound.jsx'
@@ -28,6 +29,7 @@ function App() {
           <Route path='/about' element={<About />}></Route>
           <Route path='/contact' element={<Contact />}></Route>
           <Route path='/services' element={<Services />}></Route>
+          <Route path='/privacy' element={<Privacy />}></Route>
 
           <Route path="*" element={<NotFound />} />
 

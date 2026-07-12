@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import emailjs from '@emailjs/browser'
 import './Form.css'
 
@@ -50,7 +51,7 @@ function ContactForm() {
 
         try {
             await emailjs.send(
-                serviceId, 
+                serviceId,
                 templateId,
                 templateParams,
                 {
@@ -70,7 +71,9 @@ function ContactForm() {
         <div className="contact-form-wrapper">
             <p className="form-label">Or send me a message</p>
 
-            <form className="contact-form" onSubmit={handleSubmit}>
+            <form className="contact-form"
+                onSubmit={handleSubmit}
+                aria-describedby="contact-privacy">
                 <div className="form-group">
                     <label htmlFor="from_name">Name</label>
 
@@ -160,6 +163,13 @@ function ContactForm() {
                         </p>
                     )}
                 </div>
+
+                <p id="contact-privacy" className="form-privacy-notice">
+                    Your name, email address, and message are used only to respond to your
+                    enquiry. Messages are delivered through EmailJS and are not sold or used
+                    for marketing.{' '}
+                    <Link to="/privacy">Read the privacy notice</Link>.
+                </p>
             </form>
         </div>
     )

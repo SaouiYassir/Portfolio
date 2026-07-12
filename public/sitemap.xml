@@ -49,4 +49,8 @@
     <priority>0.6</priority>
   </url>
 
+  <url>
+    <loc>https://yassirsaoui.vercel.app/privacy</loc>
+  </url>
+
 </urlset>

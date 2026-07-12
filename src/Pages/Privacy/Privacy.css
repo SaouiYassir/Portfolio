@@ -1,0 +1,39 @@
+.privacy-page {
+  min-height: 100vh;
+  padding: 9rem 5% 6rem;
+  background: var(--background);
+}
+
+.privacy-container {
+  width: min(760px, 100%);
+  margin: 0 auto;
+}
+
+.privacy-header {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.privacy-header h1 {
+  margin: 0.5rem 0;
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--foreground);
+}
+
+.privacy-header p,
+.privacy-container section p {
+  color: var(--muted-foreground);
+  line-height: 1.8;
+}
+
+.privacy-container section {
+  padding-block: 1.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.privacy-container section h2 {
+  margin-bottom: 0.75rem;
+  color: var(--foreground);
+  font-size: 1.2rem;
+}

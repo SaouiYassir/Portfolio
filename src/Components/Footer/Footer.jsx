@@ -13,6 +13,7 @@ const FOOTER_LINKS = [
   { label: 'Projects', to: '/projects' },
   { label: 'Services', to: '/services' },
   { label: 'Contact', to: '/contact' },
+  { label: 'Privacy', to: '/privacy' },
 ]
 
 function Footer() {

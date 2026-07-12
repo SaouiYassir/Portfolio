@@ -92,3 +92,17 @@
 .form-status--error {
   color: var(--danger);
 }
+
+.form-privacy-notice {
+  margin-top: 1rem;
+  color: var(--muted-foreground);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+.form-privacy-notice a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
