@@ -51,28 +51,32 @@ export const PROJECTS = [
     gallery: ['/Gallery/portfolio-1.jpg', '/Gallery/portfolio-2.jpg'],
     outcome: 'A fully responsive, dark/light-aware portfolio with scroll animations (AOS) and a typewriter hero — the same design system now powering every other project page on this site.',
   },
-  // {
-  //   slug: 'toa',
-  //   title: 'TOA — typewriter library',
-  //   pitch: 'A lightweight, scroll-triggered typewriter effect built as a standalone, reusable JS utility.',
-  //   tags: ['Vanilla JS', 'Open source'],
-  //   liveUrl: null,
-  //   repoUrl: 'https://github.com/SaouiYassir/toa',
-  //   featured: true,
-  //   brief: "I kept rebuilding a typewriter text effect for different projects, each time coupled to that project's specific markup. I wanted a version that any project — including non-React ones — could drop in without rewriting the logic.",
-  //   build: [
-  //     {
-  //       title: 'Decoupling from any specific framework',
-  //       desc: 'Written in vanilla JS with no dependencies, so it works whether the target project uses React, plain HTML, or anything else — a deliberate contrast to most of my other work, which leans on React.',
-  //     },
-  //     {
-  //       title: 'Scroll-triggered activation',
-  //       desc: "Uses the Intersection Observer API to start typing only once the element enters the viewport, rather than firing immediately on page load — avoids wasting the effect on content the user hasn't scrolled to yet.",
-  //     },
-  //   ],
-  //   gallery: [],
-  //   outcome: 'Published as a standalone utility on GitHub — reusable across future projects without copy-pasting the same typewriter logic each time.',
-  // },
+  {
+    slug: 'minigame',
+    title: 'Mini Game C++',
+    pitch: 'Polished 2D SFML mini-game with smooth physics, collision response, health HUD, and modular OOP design.',
+    tags: ['C++', 'OOP', 'SFML', 'Open source'],
+    liveUrl: null,
+    repoUrl: 'https://github.com/SaouiYassir/miniGame_cpp',
+    featured: true,
+    brief: "I kept rebuilding game loops and entity management from scratch for each small project. I wanted a reusable foundation — clean OOP architecture, smooth animations, and robust collision — that I could extend without rewriting core systems every time.",
+    build: [
+      {
+        title: 'Modular OOP architecture',
+        desc: 'Built with scalable class hierarchy (Entity, Player, Enemy, Projectile) — separation of concerns makes adding new game elements straightforward without touching core engine logic.',
+      },
+      {
+        title: 'Smooth physics & collision response',
+        desc: 'Implements deltaTime-based movement for frame-independent animations, plus AABB collision detection with proper resolution — no jitter or ghosting during gameplay.',
+      },
+      {
+        title: 'Health UI & real-time feedback',
+        desc: 'Integrated HUD with health bars and damage indicators that update dynamically — player feedback feels immediate and polished.',
+      },
+    ],
+    gallery: ['/Gallery/minigame1.png', '/Gallery/minigame2.png', '/Gallery/minigame3.png'],
+    outcome: 'A complete, polished mini-game foundation in C++/SFML — reusable as a template for future 2D projects, eliminating the overhead of rebuilding rendering loops, collision, and UI from scratch each time.',
+  }
 ]
 
 export const getProjectBySlug = (slug) => PROJECTS.find((p) => p.slug === slug)
