@@ -1,140 +1,82 @@
-/* ==========================================================================
-   Header
-   ========================================================================== */
+/* Header.css */
 
 .site-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
+  align-items: center;
   padding: 1.1rem 5%;
-
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
   position: sticky;
   top: 0;
   z-index: 1000;
-
-  background-color: transparent;
-  border-bottom: 1px solid transparent;
-
   font-family: var(--font-body);
-
-  transition:
-    background-color 0.3s ease,
-    border-color 0.3s ease,
-    padding 0.3s ease,
-    backdrop-filter 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease, padding 0.3s ease, backdrop-filter 0.3s ease;
 }
 
-/* Prevent background scrolling while the mobile menu is open. */
-body.menu-open {
-  overflow: hidden;
-}
-
-/* ==========================================================================
-   Scrolled state
-   ========================================================================== */
-
-.site-header.header-scrolled {
-  padding: 0.8rem 5%;
-  background-color: color-mix(
-    in srgb,
-    var(--background) 85%,
-    transparent
-  );
-  border-bottom-color: var(--border);
+.header-scrolled {
+  background-color: color-mix(in srgb, var(--background) 85%, transparent);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: 0.8rem 5%;
 }
 
-/* ==========================================================================
-   Logo
-   ========================================================================== */
-
+/* ---------- Logo ---------- */
 .logo {
-  position: relative;
-  z-index: 1020;
-
-  display: inline-flex;
   text-decoration: none;
-  border-radius: var(--radius-sm);
+  flex-shrink: 0;
 }
 
 .logo-mark {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  width: 42px;
-  height: 42px;
-
-  border: 1px solid var(--border);
+  width: 38px;
+  height: 38px;
   border-radius: var(--radius-sm);
-
-  color: var(--text-primary);
-  background-color: transparent;
-
+  border: 1px solid var(--border);
   font-family: var(--font-display);
   font-size: 0.95rem;
   font-weight: 600;
+  color: var(--text-primary);
   letter-spacing: 0.01em;
-
-  transition:
-    border-color 0.2s ease,
-    color 0.2s ease,
-    background-color 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
 .logo:hover .logo-mark {
-  color: var(--primary);
   border-color: var(--primary);
-  background-color: var(--surface);
+  color: var(--primary);
 }
 
-/* ==========================================================================
-   Desktop navigation
-   ========================================================================== */
-
+/* ---------- Desktop nav ---------- */
 .nav-links {
   display: flex;
   align-items: center;
   gap: 2rem;
-
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 .nav-links a {
-  position: relative;
-
-  padding: 6px 0;
-
-  color: var(--text-secondary);
   text-decoration: none;
-
-  font-size: 0.9rem;
-  font-weight: 500;
-
+  color: var(--text-secondary);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-sm);
+  position: relative;
+  padding: 6px 0;
   transition: color 0.25s ease;
 }
 
 .nav-links a::after {
   content: '';
-
   position: absolute;
-  bottom: -2px;
-  left: 0;
-
   width: 100%;
   height: 2px;
-
+  bottom: -2px;
+  left: 0;
   background-color: var(--primary);
-
   transform: scaleX(0);
   transform-origin: bottom right;
-
   transition: transform 0.25s ease-out;
 }
 
@@ -155,54 +97,29 @@ body.menu-open {
   transform: scaleX(1);
 }
 
-/* ==========================================================================
-   Header actions
-   ========================================================================== */
-
+/* ---------- Actions cluster ---------- */
 .header-actions {
-  position: relative;
-  z-index: 1020;
-
   display: flex;
   align-items: center;
   gap: 0.75rem;
-
   padding: 4px;
-
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
 }
 
-/* ==========================================================================
-   Theme toggle
-   ========================================================================== */
-
 .theme-toggle {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-
-  width: 34px;
-  height: 34px;
-  padding: 0;
-
+  width: 32px;
+  height: 32px;
   border: none;
-  border-radius: var(--radius-sm);
-
   background: transparent;
+  border-radius: var(--radius-sm);
   color: var(--text-secondary);
-
-  font: inherit;
   font-size: 1rem;
-  line-height: 1;
-
-  appearance: none;
-  -webkit-appearance: none;
   cursor: pointer;
-
-  transition:
-    color 0.2s ease,
-    background-color 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .theme-toggle:hover {
@@ -210,73 +127,38 @@ body.menu-open {
   background-color: var(--surface);
 }
 
-/* ==========================================================================
-   Header CTA
-   ========================================================================== */
-
 .header-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 8px 16px;
-
-  border-radius: var(--radius-sm);
-
+  text-decoration: none;
   background-color: var(--primary);
   color: var(--surface-raised);
-
-  text-decoration: none;
-  white-space: nowrap;
-
   font-size: 0.85rem;
-  font-weight: 500;
-
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease;
+  font-weight: var(--weight-medium);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
 }
 
 .header-cta:hover {
   background-color: var(--primary-hover);
-  transform: translateY(-1px);
 }
 
 .header-cta--mobile {
   display: none;
 }
 
-/* ==========================================================================
-   Hamburger
-   ========================================================================== */
-
+/* ---------- Hamburger ---------- */
 .hamburger {
   display: none;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
   gap: 5px;
-
-  width: 40px;
-  height: 40px;
   padding: 8px;
-
   border: none;
-  border-radius: var(--radius-sm);
-
   background: transparent;
-  color: inherit;
-
-  font: inherit;
-  line-height: 1;
-
-  appearance: none;
-  -webkit-appearance: none;
+  border-radius: var(--radius-sm);
   cursor: pointer;
-
   position: relative;
-  z-index: 1030;
-
+  z-index: 1010;
   transition: background-color 0.2s ease;
 }
 
@@ -286,23 +168,13 @@ body.menu-open {
 
 .hamburger .bar {
   display: block;
-  flex-shrink: 0;
-
   width: 20px;
   height: 2px;
-
-  border-radius: 999px;
   background-color: var(--text-primary);
-
-  transform-origin: center;
-
-  transition:
-    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.2s ease,
-    background-color 0.2s ease;
+  border-radius: 2px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Hamburger becomes an X. */
 .hamburger.active .bar:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
   background-color: var(--primary);
@@ -310,7 +182,7 @@ body.menu-open {
 
 .hamburger.active .bar:nth-child(2) {
   opacity: 0;
-  transform: translateX(-8px);
+  transform: translateX(-10px);
 }
 
 .hamburger.active .bar:nth-child(3) {
@@ -318,57 +190,21 @@ body.menu-open {
   background-color: var(--primary);
 }
 
-/* ==========================================================================
-   Mobile navigation
-   ========================================================================== */
-
+/* ---------- Mobile nav overlay ---------- */
 .mobile-nav {
   display: none;
 }
 
-/* ==========================================================================
-   Focus accessibility
-   ========================================================================== */
-
-.logo:focus-visible,
-.nav-links a:focus-visible,
-.theme-toggle:focus-visible,
-.header-cta:focus-visible,
-.hamburger:focus-visible,
-.mobile-nav a:focus-visible {
-  outline: 3px solid var(--primary);
-  outline-offset: 3px;
-}
-
-/* ==========================================================================
-   Tablet and mobile
-   ========================================================================== */
-
 @media screen and (max-width: 768px) {
-  .site-header {
-    padding: 1rem 7%;
-  }
-
-  .site-header.header-scrolled {
-    padding: 0.75rem 7%;
-  }
-
   .nav-links,
   .header-cta:not(.header-cta--mobile) {
     display: none;
   }
 
   .header-actions {
-    gap: 0.35rem;
-    padding: 0;
-
     border: none;
-    background: transparent;
-  }
-
-  .theme-toggle {
-    width: 40px;
-    height: 40px;
+    padding: 0;
+    gap: 0.5rem;
   }
 
   .hamburger {
@@ -377,126 +213,51 @@ body.menu-open {
 
   .mobile-nav {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
-
     position: fixed;
-    inset: 0;
-    z-index: 1000;
-
+    top: 0;
+    left: 0;
     width: 100%;
-    min-height: 100dvh;
-    padding: 7rem 2rem 3rem;
-
+    height: 100vh;
     background-color: var(--background);
-
     opacity: 0;
     visibility: hidden;
-    pointer-events: none;
-
-    transform: scale(1.04);
-
-    transition:
-      opacity 0.3s ease,
-      transform 0.3s ease,
-      visibility 0.3s ease;
+    transform: scale(1.05);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    z-index: 1000;
   }
 
   .mobile-nav.active {
     opacity: 1;
     visibility: visible;
-    pointer-events: auto;
-
     transform: scale(1);
   }
 
   .mobile-nav a {
-    position: relative;
-
-    color: var(--text-primary);
     text-decoration: none;
-
     font-family: var(--font-display);
     font-size: 1.75rem;
-    font-weight: 600;
-
-    transition:
-      color 0.2s ease,
-      transform 0.2s ease;
+    font-weight: var(--weight-semibold);
+    color: var(--text-primary);
+    transition: color 0.2s ease;
   }
 
+  .mobile-nav a.active,
   .mobile-nav a:hover {
     color: var(--primary);
-    transform: translateY(-2px);
   }
 
-  .mobile-nav a.active {
-    color: var(--primary);
-  }
-
-  .mobile-nav .header-cta--mobile {
-    display: inline-flex;
-
+  .header-cta--mobile {
+    display: inline-block;
     margin-top: 1rem;
-    padding: 12px 28px;
-
-    color: var(--surface-raised);
-    font-family: var(--font-body);
     font-size: 1.1rem;
-    font-weight: 500;
-  }
-
-  .mobile-nav .header-cta--mobile:hover {
-    color: var(--surface-raised);
+    padding: 12px 28px;
   }
 }
 
-/* ==========================================================================
-   Small phones
-   ========================================================================== */
-
-@media screen and (max-width: 420px) {
-  .site-header {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .site-header.header-scrolled {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .logo-mark {
-    width: 40px;
-    height: 40px;
-  }
-
-  .mobile-nav {
-    gap: 1.75rem;
-  }
-
-  .mobile-nav a {
-    font-size: 1.55rem;
-  }
-}
-
-/* ==========================================================================
-   Reduced motion
-   ========================================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-  .site-header,
-  .logo-mark,
-  .nav-links a,
-  .nav-links a::after,
-  .theme-toggle,
-  .header-cta,
-  .hamburger,
-  .hamburger .bar,
-  .mobile-nav,
-  .mobile-nav a {
-    transition-duration: 0.01ms;
-  }
+body.menu-open {
+  overflow: hidden;
 }
