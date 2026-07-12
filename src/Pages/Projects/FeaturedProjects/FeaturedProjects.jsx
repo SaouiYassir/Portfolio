@@ -15,7 +15,7 @@ function FeaturedProjects() {
 
       <ProjectGrid projects={featured} />
 
-      <Link to="/projects" className="view-all-link">
+      <Link to="/projects" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })} className="view-all-link">
         View all projects <i className="bi bi-arrow-right"></i>
       </Link>
     </section>

@@ -92,7 +92,7 @@ function Header() {
                         {link.label}
                     </Link>
                 ))}
-                <Link to="/contact" className="header-cta header-cta--mobile" onClick={handleLinkClick}>
+                <Link to="/contact" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })} className="header-cta header-cta--mobile" onClick={handleLinkClick}>
                     Let's talk
                 </Link>
             </nav>
