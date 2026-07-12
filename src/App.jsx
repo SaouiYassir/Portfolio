@@ -11,6 +11,7 @@ import Projects from './Pages/Projects/Projects.jsx'
 import ProjectDetail from './Pages/Projects/ProjectDetail/ProjectDetail.jsx'
 import Services from './Pages/Services/Services.jsx'
 import Footer from './Components/Footer/Footer.jsx'
+import NotFound from './Pages/NotFound/NotFound.jsx'
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
         <Route path='/about' element={<About />}></Route>
         <Route path='/contact' element={<Contact />}></Route>
         <Route path='/services' element={<Services />}></Route>
+
+        <Route path="*" element={<NotFound />} />
 
       </Routes>
 
