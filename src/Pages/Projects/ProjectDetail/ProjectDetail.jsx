@@ -1,29 +1,8 @@
-// import { useParams, Link } from 'react-router-dom'
-// import { getProjectBySlug, getNextProject } from '../../../Data/Projects'
-// import './ProjectDetail.css'
-
-// function ProjectDetail() {
-//   const { slug } = useParams()
-//   const project = getProjectBySlug(slug)
-
-//   if (!project) {
-//     return (
-//       <section className="project-detail-notfound">
-//         <h1>Project not found</h1>
-//         <Link to="/projects">Back to all projects</Link>
-//       </section>
-//     )
-//   }
-
-//   const nextProject = getNextProject(project.slug)
-
-//   return (
-//     <article className="project-detail">
-
 import { useParams, Link } from 'react-router-dom'
 import SEO from '../../../Components/SEO/SEO'
 import { getProjectBySlug, getNextProject } from '../../../Data/Projects'
 import './ProjectDetail.css'
+import ProjectNotFound from '../ProjectNotFound/ProjectNotFound'
 
 function ProjectDetail() {
   const { slug } = useParams()
@@ -31,16 +10,16 @@ function ProjectDetail() {
 
   if (!project) {
     return (
-      <section className="project-detail-notfound">
-        <h1>Project not found</h1>
-        <Link to="/projects">Back to all projects</Link>
-      </section>
+      <ProjectNotFound />
     )
   }
 
   const nextProject = getNextProject(project.slug)
-  const ogImage = project.gallery[0]
-    ? `https://saouiyassir.github.io${project.gallery[0]}`
+
+  const SITE_URL = 'https://yassirsaoui.vercel.app'
+
+  const ogImage = project.gallery?.[0]
+    ? new URL(project.gallery[0], SITE_URL).href
     : undefined
 
   return (

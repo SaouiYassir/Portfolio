@@ -4,7 +4,7 @@ const SITE_URL = 'https://yassirsaoui.vercel.app'
 const DEFAULT_IMAGE = `${SITE_URL}/Gallery/og-default.jpg`
 const SITE_TITLE = 'Yassir Saoui'
 
-function SEO({ title, description, path = '', image }) {
+function SEO({ title, description, path = '', image, noIndex = false, }) {
   const fullTitle = `${title} | ${SITE_TITLE}`
   const url = `${SITE_URL}${path}`
   const ogImage = image || DEFAULT_IMAGE
@@ -13,6 +13,9 @@ function SEO({ title, description, path = '', image }) {
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
+      {noIndex && (
+        <meta name="robots" content="noindex, nofollow" />
+      )}
       <link rel="canonical" href={url} />
 
       <meta property="og:title" content={fullTitle} />

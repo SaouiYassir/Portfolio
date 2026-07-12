@@ -49,7 +49,7 @@ export const PROJECTS = [
       },
     ],
     gallery: ['/Gallery/portfolio-1.jpg', '/Gallery/portfolio-2.jpg'],
-    outcome: 'A fully responsive, dark/light-aware portfolio with scroll animations (AOS) and a typewriter hero — the same design system now powering every other project page on this site.',
+    outcome: 'A responsive portfolio with route-based project case studies, dark/light mode, reusable components, dynamic metadata, and a centralized CSS design system.',
   },
   {
     slug: 'minigame',

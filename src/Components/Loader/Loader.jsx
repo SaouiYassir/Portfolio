@@ -6,7 +6,7 @@ function Loader() {
   const [isHidden, setIsHidden] = useState(false)
 
   useEffect(() => {
-    const minDisplayTime = 700 // avoids an unpleasant flash on fast connections
+    const minDisplayTime = 250
     const start = Date.now()
 
     const finish = () => {

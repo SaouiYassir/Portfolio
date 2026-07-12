@@ -68,7 +68,7 @@ function ContactForm() {
 
     return (
         <div className="contact-form-wrapper">
-            <p className="form-label">Or send us a message</p>
+            <p className="form-label">Or send me a message</p>
 
             <form className="contact-form" onSubmit={handleSubmit}>
                 <div className="form-group">
@@ -125,7 +125,7 @@ function ContactForm() {
                         rows="6"
                         value={form.message}
                         onChange={handleChange}
-                        placeholder="Tell us about your project, goals, timeline and budget."
+                        placeholder="Tell me about your project, goals, timeline and budget."
                         maxLength={3000}
                         required
                     />
@@ -149,13 +149,13 @@ function ContactForm() {
                 <div aria-live="polite">
                     {status === 'sent' && (
                         <p className="form-status form-status--success">
-                            Your message has been sent successfully. We will reply soon.
+                            Your message has been sent successfully. I will reply soon.
                         </p>
                     )}
 
                     {status === 'error' && (
                         <p className="form-status form-status--error">
-                            We could not send your message. Please try again or contact us
+                            I could not send your message. Please try again or contact me
                             directly.
                         </p>
                     )}

@@ -20,8 +20,7 @@ function Contact() {
 
                         <p className="contact-hero-text">
                             Have a project, a question, or just want to talk through an idea?
-                            WhatsApp is the fastest way to reach me — I usually reply within
-                            a few hours.
+                            WhatsApp is the fastest way to reach me — Usually replies within 24 hours.
                         </p>
 
                         <a
