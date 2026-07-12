@@ -1,4 +1,9 @@
-import { useEffect, useState } from 'react'
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import './Header.css'
 
@@ -12,23 +17,82 @@ const NAV_LINKS = [
 function Header() {
   const location = useLocation()
 
+  const menuButtonRef = useRef(null)
+  const mobileNavigationRef = useRef(null)
+
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
   const [isDarkMode, setIsDarkMode] = useState(() => {
+    // Prevent errors if the website is pre-rendered later.
+    if (typeof window === 'undefined') {
+      return false
+    }
+
     const savedTheme = localStorage.getItem('theme')
 
     if (savedTheme) {
       return savedTheme === 'dark'
     }
 
-    return window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false
+    return (
+      window.matchMedia?.('(prefers-color-scheme: dark)').matches ??
+      false
+    )
   })
+
+  /**
+   * Close the mobile menu safely.
+   *
+   * When a link inside the menu has keyboard focus, move that focus
+   * back to the hamburger before making the navigation inert.
+   */
+  const closeMenu = useCallback(() => {
+    const activeElement = document.activeElement
+    const navigation = mobileNavigationRef.current
+
+    if (
+      navigation &&
+      activeElement &&
+      navigation.contains(activeElement)
+    ) {
+      menuButtonRef.current?.focus()
+    }
+
+    setIsOpen(false)
+  }, [])
+
+  const toggleMenu = () => {
+    if (isOpen) {
+      closeMenu()
+      return
+    }
+
+    setIsOpen(true)
+  }
+
+  const toggleTheme = () => {
+    setIsDarkMode((previousValue) => !previousValue)
+  }
+
+  const isActive = (path) => {
+    if (path === '/') {
+      return location.pathname === '/'
+    }
+
+    return (
+      location.pathname === path ||
+      location.pathname.startsWith(`${path}/`)
+    )
+  }
 
   // Apply and save the selected theme.
   useEffect(() => {
     document.body.classList.toggle('dark-mode', isDarkMode)
-    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light')
+    localStorage.setItem(
+      'theme',
+      isDarkMode ? 'dark' : 'light',
+    )
   }, [isDarkMode])
 
   // Change the header appearance after scrolling.
@@ -39,18 +103,25 @@ function Header() {
 
     handleScroll()
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('scroll', handleScroll, {
+      passive: true,
+    })
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [])
 
-  // Close the mobile menu whenever the route changes.
+  // Close the mobile navigation whenever the route changes.
   useEffect(() => {
-    setIsOpen(false)
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
-  }, [location.pathname])
+    closeMenu()
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    })
+  }, [location.pathname, closeMenu])
 
   // Prevent the page behind the mobile menu from scrolling.
   useEffect(() => {
@@ -61,11 +132,11 @@ function Header() {
     }
   }, [isOpen])
 
-  // Close the menu with Escape.
+  // Close the menu when Escape is pressed.
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.key === 'Escape') {
-        setIsOpen(false)
+      if (event.key === 'Escape' && isOpen) {
+        closeMenu()
       }
     }
 
@@ -74,13 +145,13 @@ function Header() {
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
     }
-  }, [])
+  }, [isOpen, closeMenu])
 
   // Close the mobile menu when returning to desktop width.
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 768) {
-        setIsOpen(false)
+      if (window.innerWidth > 768 && isOpen) {
+        closeMenu()
       }
     }
 
@@ -89,31 +160,13 @@ function Header() {
     return () => {
       window.removeEventListener('resize', handleResize)
     }
-  }, [])
-
-  const toggleMenu = () => {
-    setIsOpen((previousValue) => !previousValue)
-  }
-
-  const toggleTheme = () => {
-    setIsDarkMode((previousValue) => !previousValue)
-  }
-
-  const closeMenu = () => {
-    setIsOpen(false)
-  }
-
-  const isActive = (path) => {
-    if (path === '/') {
-      return location.pathname === '/'
-    }
-
-    return location.pathname === path || location.pathname.startsWith(`${path}/`)
-  }
+  }, [isOpen, closeMenu])
 
   return (
     <header
-      className={`site-header ${scrolled ? 'header-scrolled' : ''}`}
+      className={`site-header ${
+        scrolled ? 'header-scrolled' : ''
+      }`}
       data-aos="fade-down"
     >
       <Link
@@ -127,7 +180,10 @@ function Header() {
         </span>
       </Link>
 
-      <nav className="nav-links" aria-label="Main navigation">
+      <nav
+        className="nav-links"
+        aria-label="Main navigation"
+      >
         {NAV_LINKS.map((link) => {
           const active = isActive(link.to)
 
@@ -150,27 +206,42 @@ function Header() {
           className="theme-toggle"
           onClick={toggleTheme}
           aria-label={
-            isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'
+            isDarkMode
+              ? 'Switch to light mode'
+              : 'Switch to dark mode'
           }
           aria-pressed={isDarkMode}
         >
           <i
-            className={isDarkMode ? 'bi bi-sun-fill' : 'bi bi-moon-fill'}
+            className={
+              isDarkMode
+                ? 'bi bi-sun-fill'
+                : 'bi bi-moon-fill'
+            }
             aria-hidden="true"
           />
         </button>
 
-        <Link to="/contact" className="header-cta">
+        <Link
+          to="/contact"
+          className="header-cta"
+          onClick={closeMenu}
+        >
           Let&apos;s talk
         </Link>
 
         <button
+          ref={menuButtonRef}
           type="button"
-          className={`hamburger ${isOpen ? 'active' : ''}`}
+          className={`hamburger ${
+            isOpen ? 'active' : ''
+          }`}
           aria-expanded={isOpen}
           aria-controls="mobile-navigation"
           aria-label={
-            isOpen ? 'Close navigation menu' : 'Open navigation menu'
+            isOpen
+              ? 'Close navigation menu'
+              : 'Open navigation menu'
           }
           onClick={toggleMenu}
         >
@@ -181,10 +252,13 @@ function Header() {
       </div>
 
       <nav
+        ref={mobileNavigationRef}
         id="mobile-navigation"
-        className={`mobile-nav ${isOpen ? 'active' : ''}`}
+        className={`mobile-nav ${
+          isOpen ? 'active' : ''
+        }`}
         aria-label="Mobile navigation"
-        aria-hidden={!isOpen}
+        inert={!isOpen}
       >
         {NAV_LINKS.map((link) => {
           const active = isActive(link.to)
@@ -196,7 +270,7 @@ function Header() {
               className={active ? 'active' : ''}
               aria-current={active ? 'page' : undefined}
               onClick={closeMenu}
-              tabIndex={isOpen ? 0 : -1}
+              tabIndex={isOpen ? undefined : -1}
             >
               {link.label}
             </Link>
@@ -207,7 +281,7 @@ function Header() {
           to="/contact"
           className="header-cta header-cta--mobile"
           onClick={closeMenu}
-          tabIndex={isOpen ? 0 : -1}
+          tabIndex={isOpen ? undefined : -1}
         >
           Let&apos;s talk
         </Link>
