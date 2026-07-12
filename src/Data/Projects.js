@@ -28,7 +28,7 @@ export const PROJECTS = [
   {
     slug: 'portfolio',
     title: 'Personal portfolio',
-    pitch: 'This site — designed and built from scratch with a custom theming system and scroll-driven animations.',
+    pitch: 'This site — designed and built from scratch with a custom theming system, responsive layouts, and polished route-based interactions.',
     tags: ['React', 'Vite', 'Design system'],
     liveUrl: 'https://yassirsaoui.vercel.app/',
     repoUrl: null,
@@ -36,8 +36,8 @@ export const PROJECTS = [
     brief: "I needed a portfolio that could represent both sides of my work — a CS student's technical grounding and a freelancer's ability to ship real, polished projects — without relying on a template.",
     build: [
       {
-        title: 'Dark/light mode from first principles',
-        desc: 'Built with React Context and CSS custom properties toggling a `body.dark-mode` class, rather than a third-party theme library — kept full control over every token.',
+        title: 'Persistent dark/light theme',
+        desc: 'Built with React state, localStorage, and CSS custom properties that toggle a `body.dark-mode` class. The selected theme is preserved between visits without relying on a third-party theme library.',
       },
       {
         title: 'Fixing a flash-of-wrong-theme on load',

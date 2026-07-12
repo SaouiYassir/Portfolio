@@ -1,27 +1,32 @@
-// NotFound.jsx
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import SEO from '../../Components/SEO/SEO.jsx'
 import './NotFound.css'
 
 export default function NotFound() {
+  const location = useLocation()
+
   return (
     <>
       <SEO
         title="Page not found"
         description="The requested page could not be found."
-        path="/404"
+        path={location.pathname}
         noIndex
       />
-      <main>
-        <section className="not-found">
-          <p className="not-found-code">404</p>
-          <h1>Page not found</h1>
-          <p className="not-found-text">
-            The page you're looking for doesn't exist, or may have moved.
-          </p>
-          <Link to="/" className="not-found-link">
-            <i className="bi bi-arrow-left"></i> Back to home
-          </Link>
-        </section>
+
+      <main className="not-found-page">
+        <span className="not-found-code">404</span>
+
+        <h1>Page not found</h1>
+
+        <p>
+          The page you&apos;re looking for doesn&apos;t exist, or may have
+          moved.
+        </p>
+
+        <Link to="/" className="btn btn-primary">
+          Back to home
+        </Link>
       </main>
     </>
   )

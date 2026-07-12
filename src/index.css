@@ -115,3 +115,9 @@ code, .mono, .tag {
 @media (max-width: 640px) {
   h1 { font-size: var(--text-4xl); }
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
