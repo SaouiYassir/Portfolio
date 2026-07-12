@@ -8,6 +8,8 @@ This website presents my skills, education, services, and development projects. 
 
 [View the Portfolio](https://yassirsaoui.vercel.app)
 
+![Portfolio CI](https://github.com/SaouiYassir/Portfolio/actions/workflows/ci.yml/badge.svg)
+
 ## Features
 
 - Responsive design for desktop, tablet, and mobile
