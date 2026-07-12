@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { render, screen, waitFor } from '@testing-library/react'
+import { MemoryRouter } from 'react-router-dom'
 import userEvent from '@testing-library/user-event'
 
 import emailjs from '@emailjs/browser'
@@ -11,13 +12,21 @@ vi.mock('@emailjs/browser', () => ({
   },
 }))
 
+function renderContactForm() {
+  return render(
+    <MemoryRouter initialEntries={['/contact']}>
+      <ContactForm />
+    </MemoryRouter>,
+  )
+}
+
 describe('ContactForm', () => {
   beforeEach(() => {
     emailjs.send.mockReset()
   })
 
   it('marks all form fields as required', () => {
-    render(<ContactForm />)
+    renderContactForm()
 
     expect(screen.getByLabelText(/^name$/i)).toBeRequired()
     expect(screen.getByLabelText(/email address/i)).toBeRequired()
@@ -28,7 +37,7 @@ describe('ContactForm', () => {
   it('rejects an invalid email address', async () => {
     const user = userEvent.setup()
 
-    render(<ContactForm />)
+    renderContactForm()
 
     const emailInput = screen.getByLabelText(/email address/i)
 
@@ -40,7 +49,7 @@ describe('ContactForm', () => {
   it('does not send an incomplete form', async () => {
     const user = userEvent.setup()
 
-    render(<ContactForm />)
+    renderContactForm()
 
     await user.click(
       screen.getByRole('button', {
@@ -59,7 +68,7 @@ describe('ContactForm', () => {
       text: 'OK',
     })
 
-    render(<ContactForm />)
+    renderContactForm()
 
     await user.type(screen.getByLabelText(/^name$/i), 'Yassir Saoui')
 
@@ -98,7 +107,7 @@ describe('ContactForm', () => {
 
     emailjs.send.mockRejectedValue(new Error('EmailJS failed'))
 
-    render(<ContactForm />)
+    renderContactForm()
 
     await user.type(screen.getByLabelText(/^name$/i), 'Yassir Saoui')
 

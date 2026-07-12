@@ -2,7 +2,11 @@ import '@testing-library/jest-dom/vitest'
 import { cleanup } from '@testing-library/react'
 import { afterEach, vi } from 'vitest'
 
-// Clean the rendered DOM after every test.
+// Dummy configuration used only by automated tests.
+vi.stubEnv('VITE_EMAILJS_SERVICE_ID', 'service_test')
+vi.stubEnv('VITE_EMAILJS_TEMPLATE_ID', 'template_test')
+vi.stubEnv('VITE_EMAILJS_PUBLIC_KEY', 'public_test')
+
 afterEach(() => {
   cleanup()
   document.body.className = ''
@@ -10,7 +14,6 @@ afterEach(() => {
   vi.clearAllMocks()
 })
 
-// jsdom does not provide matchMedia by default.
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
   value: vi.fn().mockImplementation((query) => ({
@@ -25,7 +28,6 @@ Object.defineProperty(window, 'matchMedia', {
   })),
 })
 
-// jsdom does not fully implement scrolling.
 Object.defineProperty(window, 'scrollTo', {
   writable: true,
   value: vi.fn(),
