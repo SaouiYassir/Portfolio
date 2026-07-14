@@ -1,10 +1,62 @@
 export const PROJECTS = [
   {
+    slug: 'casablanca-location',
+    title: 'Casablanca Location',
+    pitch: 'A modern car rental platform designed for a Casablanca agency, featuring a premium UI, responsive catalogue, WhatsApp reservations, and SEO-first architecture.',
+    tags: [
+      'React',
+      'React Router',
+      'EmailJS',
+      'WhatsApp Booking',
+      'SEO',
+      'Design System'
+    ],
+    liveUrl: 'https://casablanca-agency.vercel.app/',
+    repoUrl: null,
+    featured: true,
+
+    brief:
+      'Casablanca Location was built as a complete digital experience for a Moroccan car rental agency. The objective was to create a modern website that inspires trust, showcases the vehicle fleet, and allows customers to request reservations without requiring a complex backend.',
+
+    build: [
+      {
+        title: 'Designing a complete booking experience',
+        desc:
+          'Designed a responsive booking journey centered around a searchable vehicle catalogue, detailed car pages, and reservation requests sent directly through WhatsApp and EmailJS. The experience minimizes friction while remaining simple for both customers and the agency.',
+      },
+      {
+        title: 'Creating the Atlas Warm design system',
+        desc:
+          'Developed a reusable design system built around warm neutral colors, terracotta accents, elegant typography (Fraunces + Inter), consistent spacing tokens, reusable UI components, and accessibility-first principles. The result is a premium visual identity tailored to the Moroccan market.',
+      },
+      {
+        title: 'Building an SEO-first React architecture',
+        desc:
+          'Implemented reusable SEO components with dynamic meta tags, Open Graph support, canonical URLs, structured data (Schema.org AutoRental), sitemap generation, robots.txt, and optimized social sharing to improve discoverability and search engine visibility.',
+      },
+      {
+        title: 'Performance & user experience',
+        desc:
+          'Optimized responsive layouts, lazy-loaded media, accessible navigation, smooth animations, and reusable React components to deliver a fast, maintainable, and production-ready application across desktop, tablet, and mobile devices.',
+      },
+    ],
+
+    gallery: [
+      '/Gallery/casablanca-location-1.png',
+      '/Gallery/casablanca-location-2.png',
+      '/Gallery/casablanca-location-3.png',
+      '/Gallery/casablanca-location-4.png',
+    ],
+
+    outcome:
+      'Delivered a production-ready React application featuring a responsive vehicle catalogue, WhatsApp reservation workflow, contact forms powered by EmailJS, comprehensive SEO optimization, and a scalable design system. The project serves as a reusable foundation for future rental agencies while providing a polished showcase piece for the portfolio.',
+  },
+  {
     slug: 'marrakech-location',
     title: 'Marrakech Location',
     pitch: 'A full car-rental platform shipped for a Moroccan agency — booking flow, live catalogue, zero backend cost.',
     tags: ['React', 'WhatsApp booking', 'EmailJS'],
-    liveUrl: 'https://location-var1.vercel.app/',
+    liveUrl: 'https://marrakech-agency.vercel.app/',
     repoUrl: null,
     featured: true,
     brief: 'A Marrakech-based car rental agency needed an online presence that could showcase their fleet and let customers request bookings — without the cost or complexity of a custom backend.',
