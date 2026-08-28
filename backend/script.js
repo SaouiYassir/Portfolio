@@ -1,7 +1,6 @@
-require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const db = require("./database/db");
+const db = require("./config/db");
 
 const app = express();
 const PORT = 5000;
@@ -18,6 +17,19 @@ app.get("/", (req, res) => {
 
 app.get("/api/admins", (req, res) => {
     db.query("SELECT * FROM admins", (err, results) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).json({
+                error: "Database error"
+            });
+        }
+
+        res.json(results);
+    });
+})
+
+app.get("/api/projects", (req, res) => {
+    db.query("SELECT * FROM projects", (err, results) => {
         if (err) {
             console.error(err);
             return res.status(500).json({
