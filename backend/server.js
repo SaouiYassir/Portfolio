@@ -2,6 +2,7 @@ import express from 'express'
 import mongoose from "mongoose";
 import dotenv from 'dotenv'
 import cors from 'cors'
+import adminRouter from './routes/adminRoutes.js';
 
 dotenv.config();
 
@@ -18,6 +19,8 @@ mongoose.connect(process.env.MONGO_URI)
 app.get("/", (req, res) => {
     res.send("Your server is running successfully...")
 });
+
+app.use("/api", adminRouter);
 
 app.listen(port, (req, res) => {
     console.log(`Your server is in http://localhost:${port}`);
