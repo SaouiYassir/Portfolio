@@ -1,4 +1,5 @@
 import express from 'express'
+import mongoose from "mongoose";
 import dotenv from 'dotenv'
 import cors from 'cors'
 
@@ -9,6 +10,10 @@ const port = process.env.PORT;
 
 app.use(express.json());
 app.use(cors());
+
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log("Connected"))
+    .catch(() => console.log("Connection failed"));
 
 app.get("/", (req, res) => {
     res.send("Your server is running successfully...")
