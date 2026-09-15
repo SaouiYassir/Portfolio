@@ -4,7 +4,7 @@ import bcrypt from 'bcrypt'
 
 dotenv.config();
 
-export const addUser = async (req, res) => {
+export const addAdmin = async (req, res) => {
     try {
 
         const {username, email, password} = req.body;
@@ -49,5 +49,41 @@ export const addUser = async (req, res) => {
             return res.status(409).json({ message: `${field} is already in use.` });
         }
         res.status(500).json({message: err.message})
+    }
+}
+
+export const loginAdmin = async (req, res) => {
+    try {
+        const {username, password} = req.body;
+
+        if(!username || !password) {
+            res.status(400).json({message: "All fields are required!"});
+        }
+
+        const existingUser = await user.findOne({ username: username });
+
+        if (!existingUser) {
+            return res.status(401).json({ message: "Invalid credentials." });
+        }
+        
+        const checkPassword = await bcrypt.compare(password, existingUser.password);
+
+        // 5. Handle case: wrong password
+        if (!checkPassword) {
+            return res.status(401).json({ message: "Invalid credentials." });
+        }
+
+        // 6. Success - return user info (optionally a JWT token later)
+        res.status(200).json({
+            message: "Login successful.",
+            user: {
+                id: existingUser._id,
+                username: existingUser.username,
+                email: existingUser.email
+            }
+        });
+
+    } catch(err) {
+        res.status(500).json({message: err.message});
     }
 }
