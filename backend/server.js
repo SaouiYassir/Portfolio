@@ -2,7 +2,8 @@ import express from 'express'
 import mongoose from "mongoose";
 import dotenv from 'dotenv'
 import cors from 'cors'
-import adminRouter from './routes/adminRoutes.js';
+import adminRouter from './routes/adminRoutes.js'
+import projectRouter from './routes/projectRoutes.js';
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api", adminRouter);
+app.use("/api", projectRouter);
 
 app.listen(port, (req, res) => {
     console.log(`Your server is in http://localhost:${port}`);
