@@ -46,3 +46,22 @@ export const addProject = async (req, res) => {
   }
 };
 
+
+export const listProjects = async (req, res) => {
+  try {
+    const projects = await project.find().sort({ createdAt: -1 });
+
+    return res.status(200).json({
+      success: true,
+      count: projects.length,
+      data: projects,
+    });
+  } catch (error) {
+    console.error("Error listing projects:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Internal server error.",
+      error: error.message,
+    });
+  }
+};
