@@ -92,3 +92,32 @@ export const getProject = async (req, res) => {
     });
   }
 };
+
+export const deleteProject = async (req, res) => {
+  try {
+    const {id} = req.params;
+
+    const deleted = await project.findByIdAndDelete(id);
+
+    if (!deleted) {
+      return res.status(404).json({
+        success: false,
+        message: "Project not found.",
+      });
+    }
+
+    return res.status(200).json({
+      success: true,
+      message: "Project deleted successfully.",
+      data: deleted,
+    });
+
+  } catch(err) {
+    console.error("Error deleting project:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Internal server error.",
+      error: error.message,
+    });
+  }
+}
