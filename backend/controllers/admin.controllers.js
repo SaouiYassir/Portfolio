@@ -5,6 +5,26 @@ import mongoose from "mongoose";
 
 dotenv.config();
 
+export const getAdmins = async (req, res) => {
+    try {
+        const admins = await user.find().sort({ createdAt: -1 });
+
+        return res.status(200).json({
+            success: true,
+            count: admins.length,
+            data: admins,
+        });
+
+    } catch(err) {
+        console.error("Error listing admins:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Internal server error.",
+      error: err.message,
+    });
+    }
+}
+
 export const addAdmin = async (req, res) => {
   try {
     const { username, email, password } = req.body;
