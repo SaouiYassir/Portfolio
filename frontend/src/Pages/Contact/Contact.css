@@ -1,0 +1,104 @@
+.contact-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--space-2xl) 5%;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media screen and (max-width: 800px) {
+  .contact-page {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.contact-hero {
+  padding-top: 0.5rem;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--accent);
+  background-color: var(--accent-tint);
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin: 0 0 var(--space-md);
+}
+
+.hero-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  display: inline-block;
+}
+
+.contact-hero h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+  line-height: var(--leading-tight);
+  margin: 0 0 var(--space-sm);
+}
+
+.contact-hero-text {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-lg);
+  max-width: 420px;
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #25D366;
+  color: #04140C;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  padding: 14px 26px;
+  border-radius: var(--radius-sm);
+  transition: filter 0.2s ease;
+}
+
+.whatsapp-btn i {
+  font-size: 1.2rem;
+}
+
+.whatsapp-btn:hover {
+  filter: brightness(0.95);
+}
+
+.contact-meta {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border);
+}
+
+.contact-meta p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin: 0 0 8px;
+}
+
+.contact-meta i {
+  color: var(--text-muted);
+}
