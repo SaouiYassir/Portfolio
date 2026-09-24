@@ -3,15 +3,17 @@ import {
   addProject,
   listProjects,
   getProject,
-  deleteProject
+  deleteProject,
+  updateProject
 } from "../controllers/project.controllers.js"
 
-const projectRouter = express.Router()
+const projectRouter = express.Router();
 
-projectRouter.post("/project", addProject)          
-projectRouter.get("/projects", listProjects)        
-projectRouter.get("/project/:id", getProject)
-projectRouter.delete("/project/:id", deleteProject)
+projectRouter.post("/project", addProject)
+  .get("/projects", listProjects)
+  .get("/projects/:id", getProject)
+  .delete("/project/:id", deleteProject)
+  .patch("/project/:id", updateProject);
 
 
 export default projectRouter
